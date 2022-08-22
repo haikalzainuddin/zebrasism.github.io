@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+}
+
+#rsvpForm {
+  width: 500px;
+  margin: 100px auto;
+}
+
+#partners {
+  display: none;
+}
+
+#partners.show-this {
+  display: block;
+}
+
+.guests-list {
+  max-width: 100%;
+  margin: 25px;
+}
+.guests-list .row {
+  display: flex;
+  border-bottom: 1px solid #ddd;
+}
+.guests-list .row span {
+  width: 16.6666666667%;
+  padding: 10px 15px;
+}
+.guests-list .row.row-title {
+  font-weight: 700;
+  border-top: 1px solid #ddd;
+}
+
+.totalpax {
+  margin: 25px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=/styles.e4690120.css.map */

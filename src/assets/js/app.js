@@ -34,7 +34,9 @@ $(function(){
 
     $(document).ready(function(){
         showPartners()
-        getGuestList()
+        if ($('.guests-list').length) {
+            getGuestList()
+        }
     })
 
     if ($('.invitation-page').length) {
@@ -84,18 +86,64 @@ $(function(){
     function submitForm() {
         const newDoc = setDoc(doc(db, 'guests',  $('.name').val()), { 
             name: $('.name').val(),
-            phone: $('.phone').val()
+            phone: $('.phone').val(),
+            email: $('.email').val(),
+            status: $('.status').val(),
+            pax: $('.pax').val(),
+            message: $('.message').val(),
         });
     }
 
     async function getGuestList() {
+
+        let pax = []
+
+        // get guests list
         const getGuestList1 = query(
             collection(firestore, 'guests')
         )
+
         const querySnapshot = await getDocs(getGuestList1)
-        console.log(querySnapshot)
+
+        // end - get guests list
+
+        // append list to page
+
+        let guestList = $('#guests-list')
+
         const allDocs = querySnapshot.forEach((guest) => {
-            console.log(guest.data())
+            let data = guest.data()
+
+            pax.push(data.pax)
+
+            guestList.append(
+                `<div class="row">
+                    <span>${data.name}</span>
+                    <span>${data.phone}</span>
+                    <span>${data.email}</span>
+                    <span>${data.status}</span>
+                    <span>${data.pax}</span>
+                    <span>${data.message}</span>
+                </div>`
+            )
         })
+
+        calcPax(pax)
+
+        // end - append list to page
+
+    }
+
+    async function calcPax(pax) {
+        let totalpax = 0
+        let totalpax_box = $('.totalpax-amount')
+
+        for (let i = 0; i<pax.length; i++) {
+            var eee = parseInt(pax[i])
+            console.log(typeof eee)
+            totalpax = totalpax + parseInt(pax[i])
+        }
+
+        totalpax_box.append(totalpax)
     }
 })

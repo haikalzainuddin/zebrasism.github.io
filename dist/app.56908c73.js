@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"node_modules/process/browser.js":[function(require,module,exports) {
+})({"../node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -326,7 +326,7 @@ process.chdir = function (dir) {
 process.umask = function () {
   return 0;
 };
-},{}],"node_modules/jquery/dist/jquery.js":[function(require,module,exports) {
+},{}],"../node_modules/jquery/dist/jquery.js":[function(require,module,exports) {
 var global = arguments[3];
 var process = require("process");
 var define;
@@ -11212,7 +11212,7 @@ if ( typeof noGlobal === "undefined" ) {
 return jQuery;
 } );
 
-},{"process":"node_modules/process/browser.js"}],"node_modules/@firebase/util/dist/index.esm2017.js":[function(require,module,exports) {
+},{"process":"../node_modules/process/browser.js"}],"../node_modules/@firebase/util/dist/index.esm2017.js":[function(require,module,exports) {
 var global = arguments[3];
 "use strict";
 
@@ -13459,7 +13459,7 @@ function getModularInstance(service) {
     return service;
   }
 }
-},{}],"node_modules/@firebase/component/dist/esm/index.esm2017.js":[function(require,module,exports) {
+},{}],"../node_modules/@firebase/component/dist/esm/index.esm2017.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -13936,7 +13936,7 @@ class ComponentContainer {
 }
 
 exports.ComponentContainer = ComponentContainer;
-},{"@firebase/util":"node_modules/@firebase/util/dist/index.esm2017.js"}],"node_modules/@firebase/logger/dist/esm/index.esm2017.js":[function(require,module,exports) {
+},{"@firebase/util":"../node_modules/@firebase/util/dist/index.esm2017.js"}],"../node_modules/@firebase/logger/dist/esm/index.esm2017.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14194,7 +14194,7 @@ function setUserLogHandler(logCallback, options) {
     }
   }
 }
-},{}],"node_modules/idb/build/wrap-idb-value.js":[function(require,module,exports) {
+},{}],"../node_modules/idb/build/wrap-idb-value.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14392,7 +14392,7 @@ function wrap(value) {
 const unwrap = value => reverseTransformCache.get(value);
 
 exports.u = unwrap;
-},{}],"node_modules/idb/build/index.js":[function(require,module,exports) {
+},{}],"../node_modules/idb/build/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -14499,7 +14499,7 @@ function getMethod(target, prop) {
   get: (target, prop, receiver) => getMethod(target, prop) || oldTraps.get(target, prop, receiver),
   has: (target, prop) => !!getMethod(target, prop) || oldTraps.has(target, prop)
 }));
-},{"./wrap-idb-value.js":"node_modules/idb/build/wrap-idb-value.js"}],"node_modules/@firebase/app/dist/esm/index.esm2017.js":[function(require,module,exports) {
+},{"./wrap-idb-value.js":"../node_modules/idb/build/wrap-idb-value.js"}],"../node_modules/@firebase/app/dist/esm/index.esm2017.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15597,7 +15597,7 @@ function registerCoreComponents(variant) {
 
 
 registerCoreComponents('');
-},{"@firebase/component":"node_modules/@firebase/component/dist/esm/index.esm2017.js","@firebase/logger":"node_modules/@firebase/logger/dist/esm/index.esm2017.js","@firebase/util":"node_modules/@firebase/util/dist/index.esm2017.js","idb":"node_modules/idb/build/index.js"}],"node_modules/firebase/app/dist/index.esm.js":[function(require,module,exports) {
+},{"@firebase/component":"../node_modules/@firebase/component/dist/esm/index.esm2017.js","@firebase/logger":"../node_modules/@firebase/logger/dist/esm/index.esm2017.js","@firebase/util":"../node_modules/@firebase/util/dist/index.esm2017.js","idb":"../node_modules/idb/build/index.js"}],"../node_modules/firebase/app/dist/index.esm.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -15636,7 +15636,7 @@ var version = "9.9.3";
  */
 
 (0, _app.registerVersion)(name, version, 'app');
-},{"@firebase/app":"node_modules/@firebase/app/dist/esm/index.esm2017.js"}],"node_modules/@firebase/webchannel-wrapper/dist/index.esm2017.js":[function(require,module,exports) {
+},{"@firebase/app":"../node_modules/@firebase/app/dist/esm/index.esm2017.js"}],"../node_modules/@firebase/webchannel-wrapper/dist/index.esm2017.js":[function(require,module,exports) {
 var global = arguments[3];
 "use strict";
 
@@ -18452,7 +18452,7 @@ var WebChannel = esm.WebChannel = $b;
 exports.WebChannel = WebChannel;
 var XhrIo = esm.XhrIo = X;
 exports.XhrIo = XhrIo;
-},{}],"node_modules/@firebase/firestore/dist/index.esm2017.js":[function(require,module,exports) {
+},{}],"../node_modules/@firebase/firestore/dist/index.esm2017.js":[function(require,module,exports) {
 var define;
 var process = require("process");
 "use strict";
@@ -51265,7 +51265,7 @@ function Fl(t, e) {
   }, "PUBLIC")), (0, _app.registerVersion)(D, "3.4.14", t), // BUILD_TARGET will be replaced by values like esm5, esm2017, cjs5, etc during the compilation
   (0, _app.registerVersion)(D, "3.4.14", "esm2017");
 }();
-},{"@firebase/app":"node_modules/@firebase/app/dist/esm/index.esm2017.js","@firebase/component":"node_modules/@firebase/component/dist/esm/index.esm2017.js","@firebase/logger":"node_modules/@firebase/logger/dist/esm/index.esm2017.js","@firebase/util":"node_modules/@firebase/util/dist/index.esm2017.js","@firebase/webchannel-wrapper":"node_modules/@firebase/webchannel-wrapper/dist/index.esm2017.js","process":"node_modules/process/browser.js"}],"node_modules/firebase/firestore/dist/index.esm.js":[function(require,module,exports) {
+},{"@firebase/app":"../node_modules/@firebase/app/dist/esm/index.esm2017.js","@firebase/component":"../node_modules/@firebase/component/dist/esm/index.esm2017.js","@firebase/logger":"../node_modules/@firebase/logger/dist/esm/index.esm2017.js","@firebase/util":"../node_modules/@firebase/util/dist/index.esm2017.js","@firebase/webchannel-wrapper":"../node_modules/@firebase/webchannel-wrapper/dist/index.esm2017.js","process":"../node_modules/process/browser.js"}],"../node_modules/firebase/firestore/dist/index.esm.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -51284,7 +51284,7 @@ Object.keys(_firestore).forEach(function (key) {
     }
   });
 });
-},{"@firebase/firestore":"node_modules/@firebase/firestore/dist/index.esm2017.js"}],"app.js":[function(require,module,exports) {
+},{"@firebase/firestore":"../node_modules/@firebase/firestore/dist/index.esm2017.js"}],"assets/js/app.js":[function(require,module,exports) {
 "use strict";
 
 var _app = _interopRequireWildcard(require("firebase/app"));
@@ -51327,7 +51327,10 @@ var guestsList = (0, _firestore.doc)(firestore, 'guests/igvIbV8o4QkfVNu6pTVf');
 $(function () {
   $(document).ready(function () {
     showPartners();
-    getGuestList();
+
+    if ($('.guests-list').length) {
+      getGuestList();
+    }
   });
 
   if ($('.invitation-page').length) {
@@ -51378,7 +51381,11 @@ $(function () {
   function submitForm() {
     var newDoc = (0, _firestore.setDoc)((0, _firestore.doc)(db, 'guests', $('.name').val()), {
       name: $('.name').val(),
-      phone: $('.phone').val()
+      phone: $('.phone').val(),
+      email: $('.email').val(),
+      status: $('.status').val(),
+      pax: $('.pax').val(),
+      message: $('.message').val()
     });
   }
 
@@ -51388,23 +51395,30 @@ $(function () {
 
   function _getGuestList() {
     _getGuestList = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
-      var getGuestList1, querySnapshot, allDocs;
+      var pax, getGuestList1, querySnapshot, guestList, allDocs;
       return _regeneratorRuntime().wrap(function _callee$(_context) {
         while (1) {
           switch (_context.prev = _context.next) {
             case 0:
+              pax = []; // get guests list
+
               getGuestList1 = (0, _firestore.query)((0, _firestore.collection)(firestore, 'guests'));
-              _context.next = 3;
+              _context.next = 4;
               return (0, _firestore.getDocs)(getGuestList1);
 
-            case 3:
+            case 4:
               querySnapshot = _context.sent;
-              console.log(querySnapshot);
+              // end - get guests list
+              // append list to page
+              guestList = $('#guests-list');
               allDocs = querySnapshot.forEach(function (guest) {
-                console.log(guest.data());
+                var data = guest.data();
+                pax.push(data.pax);
+                guestList.append("<div class=\"row\">\n                    <span>".concat(data.name, "</span>\n                    <span>").concat(data.phone, "</span>\n                    <span>").concat(data.email, "</span>\n                    <span>").concat(data.status, "</span>\n                    <span>").concat(data.pax, "</span>\n                    <span>").concat(data.message, "</span>\n                </div>"));
               });
+              calcPax(pax); // end - append list to page
 
-            case 6:
+            case 8:
             case "end":
               return _context.stop();
           }
@@ -51413,8 +51427,40 @@ $(function () {
     }));
     return _getGuestList.apply(this, arguments);
   }
+
+  function calcPax(_x) {
+    return _calcPax.apply(this, arguments);
+  }
+
+  function _calcPax() {
+    _calcPax = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(pax) {
+      var totalpax, totalpax_box, i, eee;
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+        while (1) {
+          switch (_context2.prev = _context2.next) {
+            case 0:
+              totalpax = 0;
+              totalpax_box = $('.totalpax-amount');
+
+              for (i = 0; i < pax.length; i++) {
+                eee = parseInt(pax[i]);
+                console.log(_typeof(eee));
+                totalpax = totalpax + parseInt(pax[i]);
+              }
+
+              totalpax_box.append(totalpax);
+
+            case 4:
+            case "end":
+              return _context2.stop();
+          }
+        }
+      }, _callee2);
+    }));
+    return _calcPax.apply(this, arguments);
+  }
 });
-},{"jquery":"node_modules/jquery/dist/jquery.js","firebase/app":"node_modules/firebase/app/dist/index.esm.js","firebase/firestore":"node_modules/firebase/firestore/dist/index.esm.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"jquery":"../node_modules/jquery/dist/jquery.js","firebase/app":"../node_modules/firebase/app/dist/index.esm.js","firebase/firestore":"../node_modules/firebase/firestore/dist/index.esm.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -51442,7 +51488,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60557" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50440" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -51618,5 +51664,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","app.js"], null)
-//# sourceMappingURL=/app.c328ef1a.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","assets/js/app.js"], null)
+//# sourceMappingURL=/app.56908c73.js.map
