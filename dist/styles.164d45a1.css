@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+}
+
+#rsvpForm {
+  width: 500px;
+  margin: 100px auto;
+}
+
+#partners {
+  display: none;
+}
+
+#partners.show-this {
+  display: block;
+}
+
+/*# sourceMappingURL=/styles.164d45a1.css.map */

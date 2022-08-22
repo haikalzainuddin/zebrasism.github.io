@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://kit.fontawesome.com/f6dc722695.js" crossorigin="anonymous"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./styles.scss" />
+    <script type="module" src="./app.js"></script>
+    <title>Hanna | Haikal</title>
+</head>
+<body>
+    
+    <div class="invitation-page">
+        <div class="invitation-page-wrapper">
+            <div class="invitation-content">
+                <div class="invitation-main section">
+                    <h4>Walimatulurus</h4>
+                    <div class="design">
+                        <img src="/assets/svg/kerawang-1.svg">
+                    </div>
+                    <h1>
+                        <img src="/assets/images/hanna_word.png">
+                    </h1>
+                    <span>&amp;</span>
+                    <h1>
+                        Haikal
+                    </h1>
+                    <div class="design">
+                        <img src="/assets/svg/kerawang-2.svg">
+                    </div>
+                    <h4>Saturday</h4>
+                    <h4>5th November 2022</h4>
+                </div>
+                <div class="invitation-intro section">
+                    <p>
+                        Dengan penuh kesyukuran kami
+                    </p>
+                    <div class="parents">
+                        <h3>Zainuddin bin Mohd Ali</h3>
+                        <span>&amp;</span>
+                        <h3>Shahnaz bt Mohd Yatim</h3>
+                    </div>
+                    <p>Menjemput Yang Berbahagia/Tan Sri/Puan Sri/Dato' Seri/Datin Seri/Dato'/Datin/Tuan/Puan/Encik/Cik
+                        ke majlis perkahwinan puteri kami.</p>
+                    <div class="couple">
+                        <h3>Nur Hanna bt Mohd Rafi</h3>
+                        <span>&amp;</span>
+                        <h3>Muhammad Haikal bin Zainuddin</h3>
+                    </div>
+                    <div class="details">
+                        <div>
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                            <span>Sabtu, 5 November 2022</span>
+                        </div>
+                        <div>
+                            <i class="fa fa-clock" aria-hidden="true"></i>
+                            <span>11:30am - 4:00pm</span>
+                        </div>
+                        <div>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i>
+                            <span>Dewan Razali<br>Lot 1433, Jalan Gajah 21,<br>Kg Kubu Gajah<br>47000 Sungai
+                                Buloh,<br>Selangor Darul Ehsan</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="invitation-intro section">
+                    <h3>Atur Cara Majlis</h3>
+                    <div class="timeline">
+                        <div>
+                            11:30am - 4:00pm
+                            Jamuan Makan
+                        </div>
+                        <div>
+                            12:30pm
+                            Ketibaan Pengantin
+                        </div>
+                    </div>
+                    <div class="sessions">
+                        <div>
+                            Sesi 1
+                            11:30am - 1:30pm
+                        </div>
+                        <div>
+                            Sesi 2
+                            1:30pm - 4:00pm
+                        </div>
+                    </div>
+                    <p class="">Sila maklumkan kehadiran &amp; pilih sesi yang telah ditetapkan melalui butang RSVP di
+                        bawah</p>
+                </div>
+            </div>
+            <div class="invitation-footer">
+                <div class="inivitation-footer-wrapper invitation-btns">
+                    <a href="#" data-trigger="rsvp">
+                        <i class="fa fa-3x fa-user" aria-hidden="true"></i>
+                        <span>RSVP</span>
+                    </a>
+                    <a href="#" data-trigger="calendar">
+                        <i class="fa fa-3x fa-calendar" aria-hidden="true"></i>
+                        <span>Calendar</span>
+                    </a>
+                    <a href="#" data-trigger="contact">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <span>Contact</span>
+                    </a>
+                    <a href="#" data-trigger="location">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <span>Location</span>
+                    </a>
+                    <a href="#" data-trigger="sop">
+                        <i class="fa fa-exclamation" aria-hidden="true"></i>
+                        <span>SOP</span>
+                    </a>
+                </div>
+            </div>
+            <div class="invitation-popup invitation-rsvp show-popup" data-popup="rsvp">
+                <div>
+                    <span class="popup-close">
+                        <i class="fa fa-1x fa-times" aria-hidden="true"></i>
+                    </span>
+                    <h3>RSVP</h3>
+                    <div>
+                        <form id="rsvpForm">
+                            <div>
+                                <label>Name*</label><br>
+                                <span><input type="text" name="name" class="name" required></span>
+                            </div>
+                            <div>
+                                <label>Phone*</label><br>
+                                <span><input type="text" name="phone" class="phone" required></span>
+                            </div>
+                            <div>
+                                <label>Email*</label><br>
+                                <span><input type="email" name="email" class="email" required></span>
+                            </div>
+                            <div>
+                                <label>Partners*</label><br>
+                                <span>
+                                    <select name="partners" required>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="More">More</option>
+                                    </select>
+                                </span>
+                            </div>
+                            <div>
+                                <label>Comments/Wishes/Allergy</label><br>
+                                <span><textarea name="message"></textarea></span>
+                            </div>
+                            <p><input type="submit" value="Submit"></span></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="invitation-popup invitation-calendar" data-popup="calendar">
+                <div>
+                    <span class="popup-close">
+                        <i class="fa fa-1x fa-times" aria-hidden="true"></i>
+                    </span>
+                    <h3>Calendar</h3>
+                </div>
+            </div>
+            <div class="invitation-popup invitation-contact" data-popup="contact">
+                <div>
+                    <span class="popup-close">
+                        <i class="fa fa-1x fa-times" aria-hidden="true"></i>
+                    </span>
+                    <h3>Contact</h3>
+                </div>
+            </div>
+            <div class="invitation-popup invitation-location" data-popup="location">
+                <div>
+                    <span class="popup-close">
+                        <i class="fa fa-1x fa-times" aria-hidden="true"></i>
+                    </span>
+                    <h3>Location</h3>
+                    <a href="#" class="waze">Waze</a>
+                    <a href="#" class="maps">Google Maps</a>
+                </div>
+            </div>
+            <div class="invitation-popup invitation-sop" data-popup="sop">
+                <div>
+                    <span class="popup-close">
+                        <i class="fa fa-1x fa-times" aria-hidden="true"></i>
+                    </span>
+                    <h3>SOP</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
