@@ -7,9 +7,55 @@ body {
     font-family: Poppins, sans-serif
 }
 
+.invite {
+    &-page {
+        min-height: 100vh;
+        padding: 100px 0;
+        background-color: #d8d8d8;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    &-container {
+        display: flex;
+        flex-direction: column;
+    }
+    &-card {
+        background-color: #fff;
+        height: 700px;
+        width: 500px;
+        padding:25px;
+        &.front {
+            background: url('/assets/images/kerawangNew.png');
+            background-size: 200px;
+            background-position: 15px 20px;
+            background-repeat: no-repeat;
+            background-color: white;
+            margin-bottom: 50px;
+            position: relative;
+        }
+    }
+    &-title {
+        position: absolute;
+        bottom: 25px;
+        right: 25px;
+        text-align: right;
+        h1 {
+            margin: 20px 0;
+            span {
+                display: block
+            }
+        }
+        h3 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+}
+
 #rsvpForm {
-    width: 500px;
-    margin: 100px auto;
+    margin: 20px auto;
 }
 
 #partners {

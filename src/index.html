@@ -4,11 +4,33 @@
 <body>
 
     
-    @partial("./partials/header.html")
-    @partial("./components/rsvpForm.html")
-    @partial("./partials/footer.html")
+    <div class="invite-page">
+        <div class="invite-container">
+            <div class="invite-card front">
+                <div class="invite-title">
+                    <h3>Walimatul Urus</h3>
+                    <h1>Hanna<span>&</span>Haikal</h1>
+                    <div class="invite-title-details">
+                        <h3>5 November 2022</h3>
+                        <h3>Glamhall, Damansara</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="invite-card back">
+                <h4>We would like you to join us on this special occassion</h4>
+                <p><span>Date: </span>Saturday, 5th November 2022</p>
+                <p><span>Venue: </span>Glamhall, Damansara Perdana</p>
+                <p><span>Time: </span>11:00AM - 5:00PM</p>
+                <h5>Kindly confirm your attendance by 20th of October 2022</h5>
+                <div class="invite-links">
+                    <a href="#" class="rsvp">RSVP</a> | <a href="#">Direction</a> | <a href="#">Contact</a>
+                </div>
+    
+                @partial("./components/rsvpForm.html")
+            </div>
+        </div>
+    </div>
 
-    <h1><a href="/guests.html">View Guests</a></h1>
     
     <script src="./assets/js/app.js" defer></script>
 </body>

@@ -51332,38 +51332,10 @@ $(function () {
       getGuestList();
     }
   });
-
-  if ($('.invitation-page').length) {
-    invitationFooter();
-  }
-
   $('#rsvpForm').submit(function (e) {
     e.preventDefault();
     submitForm();
   });
-
-  function invitationFooter() {
-    var popup_btn = $('.invitation-btns a'),
-        popup_box = $('.invitation-popup'),
-        popup_close = $('.popup-close');
-    popup_btn.on('click', function (e) {
-      e.preventDefault();
-
-      var _this = $(this),
-          content = _this.data('trigger');
-
-      popup_box.each(function () {
-        $(this).removeClass('show-popup');
-
-        if ($(this).data('popup') == content) {
-          $(this).addClass('show-popup');
-        }
-      });
-    });
-    popup_close.on('click', function (e) {
-      $(this).parent().parent().removeClass('show-popup');
-    });
-  }
 
   function showPartners() {
     var partners = $("#partners");
@@ -51488,7 +51460,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50440" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54573" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

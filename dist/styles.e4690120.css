@@ -7,9 +7,53 @@ body {
   font-family: Poppins, sans-serif;
 }
 
-#rsvpForm {
+.invite-page {
+  min-height: 100vh;
+  padding: 100px 0;
+  background-color: #d8d8d8;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.invite-container {
+  display: flex;
+  flex-direction: column;
+}
+.invite-card {
+  background-color: #fff;
+  height: 700px;
   width: 500px;
-  margin: 100px auto;
+  padding: 25px;
+}
+.invite-card.front {
+  background: url("/kerawangNew.7f892987.png");
+  background-size: 200px;
+  background-position: 15px 20px;
+  background-repeat: no-repeat;
+  background-color: white;
+  margin-bottom: 50px;
+  position: relative;
+}
+.invite-title {
+  position: absolute;
+  bottom: 25px;
+  right: 25px;
+  text-align: right;
+}
+.invite-title h1 {
+  margin: 20px 0;
+}
+.invite-title h1 span {
+  display: block;
+}
+.invite-title h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+#rsvpForm {
+  margin: 20px auto;
 }
 
 #partners {
