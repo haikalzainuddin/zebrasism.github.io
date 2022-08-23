@@ -1,18 +1,18 @@
 <form id="rsvpForm">
-    <div>
-        <label>Name*</label><br>
+    <div class="form-row">
+        <label>Name*</label>
         <span><input type="text" name="name" class="name" required placeholder="John Smith"></span>
     </div>
-    <div>
-        <label>Phone*</label><br>
+    <div class="form-row">
+        <label>Phone*</label>
         <span><input type="text" name="phone" class="phone" required placeholder="0174383016"></span>
     </div>
-    <div>
-        <label>Email*</label><br>
+    <div class="form-row">
+        <label>Email*</label>
         <span><input type="email" name="email" class="email"  placeholder="johnsmith@gmail.com"></span>
     </div>
-    <div>
-        <label>I will be*</label><br>
+    <div class="form-row">
+        <label>I will be*</label>
         <span>
             <select id="status" class="status" name="status" >
                 <option value="">Please Select</option>
@@ -21,8 +21,8 @@
             </select>
         </span>
     </div>
-    <div id="partners">
-        <label>Pax*</label><br>
+    <div class="form-row" id="partners">
+        <label>Pax*</label>
         <span>
             <select name="pax" class="pax">
                 <option value="1">1</option>
@@ -34,9 +34,11 @@
             </select>
         </span>
     </div>
-    <div>
-        <label>Comments/Wishes/Allergy</label><br>
+    <div class="form-row">
+        <label>Comments/Wishes/Allergy</label>
         <span><textarea name="message" class="message"></textarea></span>
     </div>
-    <p><input type="submit" value="Submit"></span></p>
+    <div class="form-row submit">
+        <p><input type="submit" value="Submit"></span></p>
+    </div>
 </form>

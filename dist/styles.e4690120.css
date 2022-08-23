@@ -4,7 +4,12 @@
 
 body {
   margin: 0;
+  position: relative;
   font-family: Poppins, sans-serif;
+}
+
+.ovh {
+  overflow: hidden;
 }
 
 .invite-page {
@@ -26,9 +31,9 @@ body {
   padding: 25px;
 }
 .invite-card.front {
-  background: url("/kerawangNew.7f892987.png");
-  background-size: 200px;
-  background-position: 15px 20px;
+  background: url("/bunga1.0a2eda55.png");
+  background-size: 500px;
+  background-position: -15px 0;
   background-repeat: no-repeat;
   background-color: white;
   margin-bottom: 50px;
@@ -50,10 +55,6 @@ body {
   margin: 0;
   font-size: 14px;
   font-weight: 500;
-}
-
-#rsvpForm {
-  margin: 20px auto;
 }
 
 #partners {
@@ -86,6 +87,71 @@ body {
   text-align: center;
   font-weight: 700;
   font-size: 20px;
+}
+
+form input, form select, form textarea {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  display: block;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+form textarea {
+  height: 100px;
+}
+form .form-row {
+  margin-bottom: 20px;
+}
+form .form-row label {
+  display: block;
+  margin-bottom: 10px;
+}
+form .form-row.submit {
+  margin-bottom: 0;
+}
+form .form-row.submit p {
+  margin: 0;
+}
+
+.popup {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  background: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  transition: 0.3s all;
+  opacity: 0;
+  visibility: hidden;
+}
+.popup-content {
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+  background: white;
+  padding: 20px;
+}
+.popup-close {
+  text-align: right;
+}
+.popup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.popup-header h2 {
+  margin: 0;
+}
+.popup.show-this {
+  opacity: 1;
+  visibility: visible;
+}
+.popup iframe {
+  width: 100%;
+  height: 250px;
 }
 
 /*# sourceMappingURL=/styles.e4690120.css.map */

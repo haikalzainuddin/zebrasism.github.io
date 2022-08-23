@@ -37,6 +37,22 @@ $(function(){
         if ($('.guests-list').length) {
             getGuestList()
         }
+        if ($('.popup-btn').length) {
+            let open_popup = $('.popup-btn')
+            open_popup.on('click', function(e){
+                let _this = $(this)
+                e.preventDefault();
+                $('body').addClass('ovh')
+                $($(`.popup[data-popup=${_this.data().popup}]`)).addClass('show-this').css('top', $(window).scrollTop())
+            })
+        }
+        if ($('.popup').length) {
+            let close_popup = $('.popup-close')
+            close_popup.on('click', function(){
+                $('body').removeClass('ovh')
+                $(this).closest('.popup').removeClass('show-this')
+            })
+        }
     })
 
     $('#rsvpForm').submit(function(e){
