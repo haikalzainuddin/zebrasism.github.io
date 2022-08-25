@@ -34,24 +34,9 @@ $(function(){
 
     $(document).ready(function(){
         showPartners()
+        popupLinks();
         if ($('.guests-list').length) {
             getGuestList()
-        }
-        if ($('.popup-btn').length) {
-            let open_popup = $('.popup-btn')
-            open_popup.on('click', function(e){
-                let _this = $(this)
-                e.preventDefault();
-                $('body').addClass('ovh')
-                $($(`.popup[data-popup=${_this.data().popup}]`)).addClass('show-this').css('top', $(window).scrollTop())
-            })
-        }
-        if ($('.popup').length) {
-            let close_popup = $('.popup-close')
-            close_popup.on('click', function(){
-                $('body').removeClass('ovh')
-                $(this).closest('.popup').removeClass('show-this')
-            })
         }
     })
 
@@ -72,15 +57,59 @@ $(function(){
         })
     }
 
-    function submitForm() {
-        const newDoc = setDoc(doc(db, 'guests',  $('.name').val()), { 
+    function popupLinks() {
+        if ($('.popup-btn').length) {
+            let open_popup = $('.popup-btn')
+            open_popup.on('click', function(e){
+                let _this = $(this)
+                e.preventDefault();
+                _this.addClass('active')
+                $('body').addClass('ovh')
+                $($(`.popup[data-popup=${_this.data().popup}]`)).addClass('show-this').css('top', $(window).scrollTop())
+            })
+        }
+        if ($('.popup').length) {
+            let close_popup = $('.popup-close')
+            close_popup.on('click', function(){
+                $('body').removeClass('ovh')
+                $(this).closest('.popup').removeClass('show-this')
+                $('.popup-btn.active').removeClass('active')
+            })
+        }
+    }
+
+    async function submitForm() {
+        let status = $('.status').val();
+        let form = $('#rsvpForm');
+        let loader = $('.loader-overlay');
+        let submitMessage = $('.form-submit-message');
+
+        const guestData = { 
             name: $('.name').val(),
             phone: $('.phone').val(),
             email: $('.email').val(),
             status: $('.status').val(),
             pax: $('.pax').val(),
             message: $('.message').val(),
-        });
+        }
+
+        try {
+            await setDoc(doc(db, 'guests',  $('.name').val()), guestData)
+
+            form.addClass('fade-this')
+            loader.addClass('show-this')
+
+            console.log(status)
+
+            setTimeout(function(){
+                form.remove();
+                loader.remove();
+                submitMessage.addClass('show-this')
+            }, 1000)
+
+        } catch (error) {
+            console.log('Something wrong submitting the form. Please contact Haikal')
+        }
     }
 
     async function getGuestList() {

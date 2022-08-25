@@ -51327,28 +51327,10 @@ var guestsList = (0, _firestore.doc)(firestore, 'guests/igvIbV8o4QkfVNu6pTVf');
 $(function () {
   $(document).ready(function () {
     showPartners();
+    popupLinks();
 
     if ($('.guests-list').length) {
       getGuestList();
-    }
-
-    if ($('.popup-btn').length) {
-      var open_popup = $('.popup-btn');
-      open_popup.on('click', function (e) {
-        var _this = $(this);
-
-        e.preventDefault();
-        $('body').addClass('ovh');
-        $($(".popup[data-popup=".concat(_this.data().popup, "]"))).addClass('show-this').css('top', $(window).scrollTop());
-      });
-    }
-
-    if ($('.popup').length) {
-      var close_popup = $('.popup-close');
-      close_popup.on('click', function () {
-        $('body').removeClass('ovh');
-        $(this).closest('.popup').removeClass('show-this');
-      });
     }
   });
   $('#rsvpForm').submit(function (e) {
@@ -51369,15 +51351,83 @@ $(function () {
     });
   }
 
+  function popupLinks() {
+    if ($('.popup-btn').length) {
+      var open_popup = $('.popup-btn');
+      open_popup.on('click', function (e) {
+        var _this = $(this);
+
+        e.preventDefault();
+
+        _this.addClass('active');
+
+        $('body').addClass('ovh');
+        $($(".popup[data-popup=".concat(_this.data().popup, "]"))).addClass('show-this').css('top', $(window).scrollTop());
+      });
+    }
+
+    if ($('.popup').length) {
+      var close_popup = $('.popup-close');
+      close_popup.on('click', function () {
+        $('body').removeClass('ovh');
+        $(this).closest('.popup').removeClass('show-this');
+        $('.popup-btn.active').removeClass('active');
+      });
+    }
+  }
+
   function submitForm() {
-    var newDoc = (0, _firestore.setDoc)((0, _firestore.doc)(db, 'guests', $('.name').val()), {
-      name: $('.name').val(),
-      phone: $('.phone').val(),
-      email: $('.email').val(),
-      status: $('.status').val(),
-      pax: $('.pax').val(),
-      message: $('.message').val()
-    });
+    return _submitForm.apply(this, arguments);
+  }
+
+  function _submitForm() {
+    _submitForm = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+      var status, form, loader, submitMessage, guestData;
+      return _regeneratorRuntime().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              status = $('.status').val();
+              form = $('#rsvpForm');
+              loader = $('.loader-overlay');
+              submitMessage = $('.form-submit-message');
+              guestData = {
+                name: $('.name').val(),
+                phone: $('.phone').val(),
+                email: $('.email').val(),
+                status: $('.status').val(),
+                pax: $('.pax').val(),
+                message: $('.message').val()
+              };
+              _context.prev = 5;
+              _context.next = 8;
+              return (0, _firestore.setDoc)((0, _firestore.doc)(db, 'guests', $('.name').val()), guestData);
+
+            case 8:
+              form.addClass('fade-this');
+              loader.addClass('show-this');
+              console.log(status);
+              setTimeout(function () {
+                form.remove();
+                loader.remove();
+                submitMessage.addClass('show-this');
+              }, 1000);
+              _context.next = 17;
+              break;
+
+            case 14:
+              _context.prev = 14;
+              _context.t0 = _context["catch"](5);
+              console.log('Something wrong submitting the form. Please contact Haikal');
+
+            case 17:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee, null, [[5, 14]]);
+    }));
+    return _submitForm.apply(this, arguments);
   }
 
   function getGuestList() {
@@ -51385,20 +51435,20 @@ $(function () {
   }
 
   function _getGuestList() {
-    _getGuestList = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee() {
+    _getGuestList = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
       var pax, getGuestList1, querySnapshot, guestList, allDocs;
-      return _regeneratorRuntime().wrap(function _callee$(_context) {
+      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
         while (1) {
-          switch (_context.prev = _context.next) {
+          switch (_context2.prev = _context2.next) {
             case 0:
               pax = []; // get guests list
 
               getGuestList1 = (0, _firestore.query)((0, _firestore.collection)(firestore, 'guests'));
-              _context.next = 4;
+              _context2.next = 4;
               return (0, _firestore.getDocs)(getGuestList1);
 
             case 4:
-              querySnapshot = _context.sent;
+              querySnapshot = _context2.sent;
               // end - get guests list
               // append list to page
               guestList = $('#guests-list');
@@ -51411,10 +51461,10 @@ $(function () {
 
             case 8:
             case "end":
-              return _context.stop();
+              return _context2.stop();
           }
         }
-      }, _callee);
+      }, _callee2);
     }));
     return _getGuestList.apply(this, arguments);
   }
@@ -51424,11 +51474,11 @@ $(function () {
   }
 
   function _calcPax() {
-    _calcPax = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(pax) {
+    _calcPax = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(pax) {
       var totalpax, totalpax_box, i, eee;
-      return _regeneratorRuntime().wrap(function _callee2$(_context2) {
+      return _regeneratorRuntime().wrap(function _callee3$(_context3) {
         while (1) {
-          switch (_context2.prev = _context2.next) {
+          switch (_context3.prev = _context3.next) {
             case 0:
               totalpax = 0;
               totalpax_box = $('.totalpax-amount');
@@ -51443,10 +51493,10 @@ $(function () {
 
             case 4:
             case "end":
-              return _context2.stop();
+              return _context3.stop();
           }
         }
-      }, _callee2);
+      }, _callee3);
     }));
     return _calcPax.apply(this, arguments);
   }
@@ -51479,7 +51529,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54303" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61648" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

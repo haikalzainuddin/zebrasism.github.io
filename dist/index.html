@@ -38,7 +38,9 @@
                 <p><span>Time: </span>11:00AM - 5:00PM</p>
                 <h5>Kindly confirm your attendance by 20th of October 2022</h5>
                 <div class="invite-links">
-                    <a href="#" class="popup-btn rsvp" data-popup="rsvp">RSVP</a> | <a href="#" class="popup-btn direction" data-popup="direction">Direction</a> | <a href="#" class="popup-btn contact" data-popup="contact">Contact</a>
+                    <a href="#" class="popup-btn rsvp" data-popup="rsvp">RSVP</a>
+                    <a href="#" class="popup-btn direction" data-popup="direction">Direction</a>
+                    <a href="#" class="popup-btn contact" data-popup="contact">Contact</a>
                 </div>
             </div>
         </div>
@@ -52,7 +54,8 @@
                     <i class="fa fa-times"></i>
                 </div>
             </div>
-            <form id="rsvpForm">
+            <div class="popup-body">
+                <form id="rsvpForm">
     <div class="form-row">
         <label>Name*</label>
         <span><input type="text" name="name" class="name" required="" placeholder="John Smith"></span>
@@ -93,9 +96,16 @@
         <span><textarea name="message" class="message"></textarea></span>
     </div>
     <div class="form-row submit">
-        <p><input type="submit" value="Submit"></p>
+        <p><input type="submit" value="Submit" class="submit-btn"></p>
     </div>
 </form>
+                <div class="loader-overlay">
+                    <div class="loader"></div>
+                </div>
+                <div class="form-submit-message">
+                    Thank you, your response has been recorded. <span>See you there!</span>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -108,6 +118,10 @@
                 </div>
             </div>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.733844762961!2d101.61146401475736!3d3.1646657976957124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4f331ef4c0bf%3A0x2017216343109cb3!2sGLAMHALL%20DAMANSARA!5e0!3m2!1sen!2smy!4v1661272218395!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="btn-wrapper">
+                <a href="#" class="btn"><i class="fab fa-waze"></i> Waze</a>
+                <a href="#" class="btn"><i class="fa fa-google"></i> Google Maps</a>
+            </div>
         </div>
     </div>
 
@@ -118,6 +132,48 @@
                 <h2>Contact</h2>
                 <div class="popup-close">
                     <i class="fa fa-times"></i>
+                </div>
+            </div>
+            <div class="contact-list">
+                <div>
+                    <div class="contact-details">
+                        Name 1
+                        <span>Title 1</span>
+                    </div>
+                    <div class="contact-numbers">
+                        <a href="#"><i class="fa fa-phone"></i> Call</a>
+                        <a href="#"><i class="fa fa-whatsapp"></i> Whatsapp</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="contact-details">
+                        Name 2
+                        <span>Title 2</span>
+                    </div>
+                    <div class="contact-numbers">
+                        <a href="#"><i class="fa fa-phone"></i> Call</a>
+                        <a href="#"><i class="fa fa-whatsapp"></i> Whatsapp</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="contact-details">
+                        Name 3
+                        <span>Title 3</span>
+                    </div>
+                    <div class="contact-numbers">
+                        <a href="#"><i class="fa fa-phone"></i> Call</a>
+                        <a href="#"><i class="fa fa-whatsapp"></i> Whatsapp</a>
+                    </div>
+                </div>
+                <div>
+                    <div class="contact-details">
+                        Name 4
+                        <span>Title 4</span>
+                    </div>
+                    <div class="contact-numbers">
+                        <a href="#"><i class="fa fa-phone"></i> Call</a>
+                        <a href="#"><i class="fa fa-whatsapp"></i> Whatsapp</a>
+                    </div>
                 </div>
             </div>
         </div>
