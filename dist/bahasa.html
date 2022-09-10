@@ -11,7 +11,12 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bonheur+Royale&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/styles.e4690120.css">
 
     <title>Hanna | Haikal</title>
@@ -32,11 +37,45 @@
                 </div>
             </div>
             <div class="invite-card back">
-                <h4>Kami ingin menjemput anda ke Majlis Perkahwinan kami.</h4>
-                <p><span>Tarikh: </span>Saturday, 5th November 2022</p>
-                <p><span>Tempat: </span>Glamhall, Damansara Perdana</p>
-                <p><span>Masa: </span>11:00AM - 3:00PM</p>
-                <h5>Sila maklumkan kedatangan anda sebelum 20 Oktober 2022</h5>
+
+                <div class="content">
+                    <p>Walimatul Urus</p>
+                    <h3>
+                        Moh’d Rafi’ Abdul Rahman & Juhariah Abdul Rahman
+                        <span>
+                            &
+                        </span>
+                        Zainuddin Mohd Ali & Shahnaz Mohd Yatim
+                    </h3>
+                </div>
+                
+                <div class="content">
+                    <p>Dengan segala hormatnya menjemput Tuan/Puan ke Majlis Perkahwinan</p>
+                
+                    <h3>
+                        Nur Hanna binti Moh’d Rafi’
+                        <span>
+                            &
+                        </span>
+                        Muhammad Haikal bin Zainuddin
+                    </h3>
+                </div>
+
+                <div class="content">
+                    <h5>Tarikh</h5>
+                    <p>Saturday, 5th November 2022</p>
+
+                    <h5>Tempat</h5>
+                    <p>Glamhall, Damansara Perdana</p>
+
+                    <h5>Masa</h5>
+                    <p>11:00AM - 3:00PM</p>
+                </div>
+
+                <div class="content">
+                    <h5>Sila maklumkan kedatangan anda sebelum 20 Oktober 2022</h5>
+                </div>
+
                 <div class="invite-links">
                     <a href="#" class="popup-btn rsvp" data-popup="rsvp">RSVP</a>
                     <a href="#" class="popup-btn direction" data-popup="direction">Tunjuk-arah</a>
@@ -57,27 +96,28 @@
             <div class="popup-body">
                 <form id="rsvpForm">
     <div class="form-row">
-        <label>Name*</label>
-        <span><input type="text" name="name" class="name" required="" placeholder="John Smith"></span>
+        <label>Nama*</label>
+        <span><input type="text" name="name" class="name" required="" placeholder=""></span>
     </div>
     <div class="form-row">
-        <label>Phone*</label>
-        <span><input type="text" name="phone" class="phone" required="" placeholder="0174383016"></span>
+        <label>Nombor Telefon*</label>
+        <span><input type="text" name="phone" class="phone" required="" placeholder=""></span>
     </div>
     <div class="form-row">
-        <label>I will be*</label>
+        <label>Saya Akan*</label>
         <span>
             <select id="status" class="status" name="status">
-                <option value="">Please Select</option>
-                <option value="attending">Attending</option>
-                <option value="not-attending">Not attending</option>
+                <option value="">Sila Pilih</option>
+                <option value="attending">Hadir</option>
+                <option value="not-attending">Tidak Hadir</option>
             </select>
         </span>
     </div>
     <div class="form-row" id="partners">
-        <label>Pax*</label>
+        <label>Bilangan*</label>
         <span>
             <select name="pax" class="pax">
+                <option value="">Sila Pilih</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -88,9 +128,10 @@
         </span>
     </div>
     <div class="form-row">
-        <label>Guest Of</label>
+        <label>Tetamu Kepada</label>
         <span>
             <select id="guest" class="guest" name="guest">
+                <option value="">Sila Pilih</option>
                 <option value="Moh’d Rafi’">Moh’d Rafi’</option>
                 <option value="Juhariah">Juhariah</option>
                 <option value="Nur Hanna">Nur Hanna</option>
@@ -100,7 +141,7 @@
         </span>
     </div>
     <div class="form-row">
-        <label>Comments/Wishes/Allergy</label>
+        <label>Komen/Ucapan</label>
         <span><textarea name="message" class="message"></textarea></span>
     </div>
     <div class="form-row submit">

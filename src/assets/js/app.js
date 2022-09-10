@@ -115,6 +115,7 @@ $(function(){
     async function getGuestList() {
 
         let pax = []
+        let status = []
 
         // get guests list
         const getGuestList1 = query(
@@ -131,34 +132,44 @@ $(function(){
 
         const allDocs = querySnapshot.forEach((guest) => {
             let data = guest.data()
+            let status_pax = ""
 
-            pax.push(data.pax)
+            pax.push(data.pax),
+            status.push(data.status)
+
+            if (status == "not-attending") {
+                status_pax = "-"
+            } else {
+                status_pax = data.pax
+            }
 
             guestList.append(
                 `<div class="row">
                     <span>${data.name}</span>
                     <span>${data.phone}</span>
-                    <span>${data.status}</span>
-                    <span>${data.pax}</span>
+                    <span>${data.status.replace('-', ' ')}</span>
+                    <span>${status_pax}</span>
                     <span>${data.guest_of}</span>
                     <span>${data.message}</span>
                 </div>`
             )
         })
 
-        calcPax(pax)
+        calcPax(status, pax)
 
         // end - append list to page
 
     }
 
-    async function calcPax(pax) {
+    async function calcPax(status, pax) {
         let totalpax = 0
         let totalpax_box = $('.totalpax-amount')
 
         for (let i = 0; i<pax.length; i++) {
-            var eee = parseInt(pax[i])
-            totalpax = totalpax + parseInt(pax[i])
+            if (status[i] == "not-attending") {
+                var eee = parseInt(pax[i])
+                totalpax = totalpax + parseInt(pax[i])
+            }
         }
 
         totalpax_box.append(totalpax)
