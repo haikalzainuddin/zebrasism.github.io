@@ -87,9 +87,9 @@ $(function(){
         const guestData = { 
             name: $('.name').val(),
             phone: $('.phone').val(),
-            email: $('.email').val(),
             status: $('.status').val(),
             pax: $('.pax').val(),
+            guest_of: $('.guest').val(),
             message: $('.message').val(),
         }
 
@@ -138,9 +138,9 @@ $(function(){
                 `<div class="row">
                     <span>${data.name}</span>
                     <span>${data.phone}</span>
-                    <span>${data.email}</span>
                     <span>${data.status}</span>
                     <span>${data.pax}</span>
+                    <span>${data.guest_of}</span>
                     <span>${data.message}</span>
                 </div>`
             )
@@ -158,7 +158,6 @@ $(function(){
 
         for (let i = 0; i<pax.length; i++) {
             var eee = parseInt(pax[i])
-            console.log(typeof eee)
             totalpax = totalpax + parseInt(pax[i])
         }
 

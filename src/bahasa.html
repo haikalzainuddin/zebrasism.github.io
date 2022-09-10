@@ -1,21 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <script src="https://kit.fontawesome.com/f6dc722695.js" crossorigin="anonymous"></script>
-
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="/styles.e4690120.css">
-
-    <title>Hanna | Haikal</title>
-</head>
+    @partial("./partials/head.html")
 <body>
 
     
@@ -32,15 +17,15 @@
                 </div>
             </div>
             <div class="invite-card back">
-                <h4>We would like you to join us on this special occassion</h4>
-                <p><span>Date: </span>Saturday, 5th November 2022</p>
-                <p><span>Venue: </span>Glamhall, Damansara Perdana</p>
-                <p><span>Time: </span>11:00AM - 3:00PM</p>
-                <h5>Kindly confirm your attendance by 20th of October 2022</h5>
+                <h4>Kami ingin menjemput anda ke Majlis Perkahwinan kami.</h4>
+                <p><span>Tarikh: </span>Saturday, 5th November 2022</p>
+                <p><span>Tempat: </span>Glamhall, Damansara Perdana</p>
+                <p><span>Masa: </span>11:00AM - 3:00PM</p>
+                <h5>Sila maklumkan kedatangan anda sebelum 20 Oktober 2022</h5>
                 <div class="invite-links">
                     <a href="#" class="popup-btn rsvp" data-popup="rsvp">RSVP</a>
-                    <a href="#" class="popup-btn direction" data-popup="direction">Direction</a>
-                    <a href="#" class="popup-btn contact" data-popup="contact">Contact</a>
+                    <a href="#" class="popup-btn direction" data-popup="direction">Tunjuk-arah</a>
+                    <a href="#" class="popup-btn contact" data-popup="contact">Hubungi</a>
                 </div>
             </div>
         </div>
@@ -55,63 +40,12 @@
                 </div>
             </div>
             <div class="popup-body">
-                <form id="rsvpForm">
-    <div class="form-row">
-        <label>Name*</label>
-        <span><input type="text" name="name" class="name" required="" placeholder="John Smith"></span>
-    </div>
-    <div class="form-row">
-        <label>Phone*</label>
-        <span><input type="text" name="phone" class="phone" required="" placeholder="0174383016"></span>
-    </div>
-    <div class="form-row">
-        <label>I will be*</label>
-        <span>
-            <select id="status" class="status" name="status">
-                <option value="">Please Select</option>
-                <option value="attending">Attending</option>
-                <option value="not-attending">Not attending</option>
-            </select>
-        </span>
-    </div>
-    <div class="form-row" id="partners">
-        <label>Pax*</label>
-        <span>
-            <select name="pax" class="pax">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="More">More</option>
-            </select>
-        </span>
-    </div>
-    <div class="form-row">
-        <label>Guest Of</label>
-        <span>
-            <select id="guest" class="guest" name="guest">
-                <option value="Moh’d Rafi’">Moh’d Rafi’</option>
-                <option value="Juhariah">Juhariah</option>
-                <option value="Nur Hanna">Nur Hanna</option>
-                <option value="Nur Hanis">Nur Hanis</option>
-                <option value="Muhammad Hazwan">Muhammad Hazwan</option>
-            </select>
-        </span>
-    </div>
-    <div class="form-row">
-        <label>Comments/Wishes/Allergy</label>
-        <span><textarea name="message" class="message"></textarea></span>
-    </div>
-    <div class="form-row submit">
-        <p><input type="submit" value="Submit" class="submit-btn"></p>
-    </div>
-</form>
+                @partial("./components/rsvpForm.html")
                 <div class="loader-overlay">
                     <div class="loader"></div>
                 </div>
                 <div class="form-submit-message">
-                    Thank you, your response has been recorded. <span>See you there!</span>
+                    Terima kasih, respon anda telah direkodkan. <span>Jumpa di sana!</span>
                 </div>
             </div>
         </div>
@@ -120,7 +54,7 @@
     <div class="popup" data-popup="direction">
         <div class="popup-content">
             <div class="popup-header">
-                <h2>Direction</h2>
+                <h2>Tunjuk-arah</h2>
                 <div class="popup-close">
                     <i class="fa fa-times"></i>
                 </div>
@@ -137,7 +71,7 @@
     <div class="popup" data-popup="contact">
         <div class="popup-content">
             <div class="popup-header">
-                <h2>Contact</h2>
+                <h2>Hubungi</h2>
                 <div class="popup-close">
                     <i class="fa fa-times"></i>
                 </div>
@@ -190,6 +124,6 @@
     <!-- git subtree push --prefix dist origin gh-pages -->
 
     
-    <script src="/app.56908c73.js" defer=""></script>
+    <script src="./assets/js/app.js" defer></script>
 </body>
 </html>
