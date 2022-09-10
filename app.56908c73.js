@@ -51394,9 +51394,9 @@ $(function () {
               guestData = {
                 name: $('.name').val(),
                 phone: $('.phone').val(),
-                email: $('.email').val(),
                 status: $('.status').val(),
                 pax: $('.pax').val(),
+                guest_of: $('.guest').val(),
                 message: $('.message').val()
               };
               _context.prev = 5;
@@ -51455,7 +51455,7 @@ $(function () {
               allDocs = querySnapshot.forEach(function (guest) {
                 var data = guest.data();
                 pax.push(data.pax);
-                guestList.append("<div class=\"row\">\n                    <span>".concat(data.name, "</span>\n                    <span>").concat(data.phone, "</span>\n                    <span>").concat(data.email, "</span>\n                    <span>").concat(data.status, "</span>\n                    <span>").concat(data.pax, "</span>\n                    <span>").concat(data.message, "</span>\n                </div>"));
+                guestList.append("<div class=\"row\">\n                    <span>".concat(data.name, "</span>\n                    <span>").concat(data.phone, "</span>\n                    <span>").concat(data.status, "</span>\n                    <span>").concat(data.pax, "</span>\n                    <span>").concat(data.guest_of, "</span>\n                    <span>").concat(data.message, "</span>\n                </div>"));
               });
               calcPax(pax); // end - append list to page
 
@@ -51485,7 +51485,6 @@ $(function () {
 
               for (i = 0; i < pax.length; i++) {
                 eee = parseInt(pax[i]);
-                console.log(_typeof(eee));
                 totalpax = totalpax + parseInt(pax[i]);
               }
 
@@ -51529,7 +51528,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61648" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53119" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
