@@ -51452,7 +51452,7 @@ $(function () {
               querySnapshot = _context2.sent;
               // end - get guests list
               // append list to page
-              guestList = $('#guests-list');
+              guestList = $('#guests-list .guests-list-wrapper');
               allDocs = querySnapshot.forEach(function (guest) {
                 var data = guest.data();
                 var status_pax = "";
@@ -51493,7 +51493,7 @@ $(function () {
               totalpax_box = $('.totalpax-amount');
 
               for (i = 0; i < pax.length; i++) {
-                if (status[i] == "not-attending") {
+                if (status[i] !== "not-attending") {
                   eee = parseInt(pax[i]);
                   totalpax = totalpax + parseInt(pax[i]);
                 }
@@ -51539,7 +51539,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64093" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50252" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

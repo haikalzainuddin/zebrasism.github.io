@@ -128,7 +128,7 @@ $(function(){
 
         // append list to page
 
-        let guestList = $('#guests-list')
+        let guestList = $('#guests-list .guests-list-wrapper')
 
         const allDocs = querySnapshot.forEach((guest) => {
             let data = guest.data()
@@ -166,7 +166,7 @@ $(function(){
         let totalpax_box = $('.totalpax-amount')
 
         for (let i = 0; i<pax.length; i++) {
-            if (status[i] == "not-attending") {
+            if (status[i] !== "not-attending") {
                 var eee = parseInt(pax[i])
                 totalpax = totalpax + parseInt(pax[i])
             }
