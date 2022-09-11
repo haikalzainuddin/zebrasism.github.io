@@ -30,6 +30,12 @@ h1, h2, h3, h4, h5, p {
   flex-direction: column;
   padding: 0 15px;
 }
+.invite-lang {
+  text-align: right;
+}
+.invite-lang a {
+  color: #000;
+}
 .invite-card {
   background-color: #fff;
   height: 700px;
@@ -59,9 +65,9 @@ h1, h2, h3, h4, h5, p {
   margin: 0 0 20px;
 }
 .invite-card .content h3 {
-  font-size: 35px;
-  font-weight: 500;
-  font-family: "Bonheur Royale", cursive;
+  font-size: 28px;
+  font-weight: 600;
+  font-family: "Dancing Script", cursive;
 }
 .invite-card .content h3 span {
   display: block;
@@ -86,8 +92,7 @@ h1, h2, h3, h4, h5, p {
 .invite-title h1 {
   margin: 20px 0;
   font-size: 50px;
-  font-weight: 500;
-  font-family: "Bonheur Royale", cursive;
+  font-family: "Dancing Script", cursive;
 }
 .invite-title h1 span {
   display: block;
@@ -332,6 +337,12 @@ form.hide-this {
 }
 
 @media only screen and (max-width: 600px) {
+  .invite-card.back {
+    padding: 30px;
+  }
+  .invite-card .content h3 {
+    font-size: 23px;
+  }
   .btn-wrapper {
     flex-direction: column;
   }

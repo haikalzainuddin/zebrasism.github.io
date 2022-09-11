@@ -31,6 +31,12 @@ h1, h2, h3, h4, h5, p {
         flex-direction: column;
         padding: 0 15px;
     }
+    &-lang {
+        text-align: right;
+        a {
+            color: #000;
+        }
+    }
     &-card {
         background-color: #fff;
         height: 700px;
@@ -58,12 +64,12 @@ h1, h2, h3, h4, h5, p {
                 margin: 0 0 20px;
             }
             h3 {
-                // font-size: 28px;
-                // font-weight: 600;
-                // font-family: 'Dancing Script', cursive;
-                font-size: 35px;
-                font-weight: 500;
-                font-family: 'Bonheur Royale', cursive;
+                font-size: 28px;
+                font-weight: 600;
+                font-family: 'Dancing Script', cursive;
+                // font-size: 35px;
+                // font-weight: 500;
+                // font-family: 'Bonheur Royale', cursive;
                 span {
                     display: block;
                     margin: 10px 0;;
@@ -89,9 +95,9 @@ h1, h2, h3, h4, h5, p {
         h1 {
             margin: 20px 0;
             font-size: 50px;
-            // font-family: 'Dancing Script', cursive;
-            font-weight: 500;
-            font-family: 'Bonheur Royale', cursive;
+            font-family: 'Dancing Script', cursive;
+            // font-weight: 500;
+            // font-family: 'Bonheur Royale', cursive;
             span {
                 display: block
             }
@@ -343,6 +349,18 @@ form {
 }
 
 @media only screen and (max-width: 600px) {
+    .invite {
+        &-card {
+            &.back {
+                padding: 30px;
+            }
+            .content {
+                h3 {
+                    font-size: 23px;
+                }
+            }
+        }
+    }
     .btn {
         &-wrapper {
             flex-direction: column;
