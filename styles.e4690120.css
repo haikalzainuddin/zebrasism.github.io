@@ -12,7 +12,7 @@ a {
   text-decoration: none;
 }
 
-h4 {
+h1, h2, h3, h4, h5, p {
   margin: 0;
 }
 
@@ -29,6 +29,12 @@ h4 {
   display: flex;
   flex-direction: column;
   padding: 0 15px;
+}
+.invite-lang {
+  text-align: right;
+}
+.invite-lang a {
+  color: #000;
 }
 .invite-card {
   background-color: #fff;
@@ -47,6 +53,36 @@ h4 {
   background-color: white;
   border-bottom: 2px solid #f4f4f4;
 }
+.invite-card.back {
+  text-align: center;
+  height: 1000px;
+  padding: 50px;
+}
+.invite-card .content {
+  margin: 50px 0;
+}
+.invite-card .content p {
+  margin: 0 0 20px;
+}
+.invite-card .content h3 {
+  font-size: 28px;
+  font-weight: 600;
+  font-family: "Dancing Script", cursive;
+}
+.invite-card .content h3 span {
+  display: block;
+  margin: 10px 0;
+}
+.invite-card .content h5 {
+  font-size: 16px;
+  margin: 0 0 10px;
+}
+.invite-card .content:first-of-type {
+  margin-top: 0;
+}
+.invite-card .content:last-of-type {
+  margin-bottom: 0;
+}
 .invite-title {
   position: absolute;
   bottom: 25px;
@@ -55,6 +91,8 @@ h4 {
 }
 .invite-title h1 {
   margin: 20px 0;
+  font-size: 50px;
+  font-family: "Dancing Script", cursive;
 }
 .invite-title h1 span {
   display: block;
@@ -299,6 +337,12 @@ form.hide-this {
 }
 
 @media only screen and (max-width: 600px) {
+  .invite-card.back {
+    padding: 30px;
+  }
+  .invite-card .content h3 {
+    font-size: 23px;
+  }
   .btn-wrapper {
     flex-direction: column;
   }
