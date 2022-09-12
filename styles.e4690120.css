@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, p {
   height: 100%;
   width: 100%;
   content: "";
-  opacity: 0.6;
+  opacity: 1;
   background: url("/bunga3.7144d8ee.png");
   background-repeat: no-repeat;
   background-size: 500px;
@@ -81,12 +81,13 @@ h1, h2, h3, h4, h5, p {
 .invite-card.back {
   text-align: center;
   height: initial;
-  padding: 50px 50px 100px;
   position: relative;
+  padding: 0;
 }
 .invite-card.back .wrapper {
   z-index: 1;
   position: relative;
+  padding: 50px 50px 0;
 }
 .invite-card.back:after {
   position: absolute;
@@ -97,8 +98,8 @@ h1, h2, h3, h4, h5, p {
   content: "";
   opacity: 0.5;
   background: url("/bunga2.ded30bdf.png");
-  background-size: 700px;
-  background-position: -130px -75px;
+  background-size: 800px;
+  background-position: -225px -70px;
   background-repeat: no-repeat;
 }
 .invite-card .content {
@@ -152,12 +153,20 @@ h1, h2, h3, h4, h5, p {
   font-weight: 500;
 }
 .invite-links {
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100%;
+  max-width: 500px;
   display: flex;
   z-index: 1;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.invite-links-wrapper {
+  height: 55px;
+  position: relative;
+  margin-top: 50px;
+  background: #652f30;
 }
 .invite-links > a {
   width: 100%;
@@ -168,10 +177,13 @@ h1, h2, h3, h4, h5, p {
   transition: 0.3s all;
 }
 .invite-links > a:hover {
-  opacity: 0.8;
+  background: #8f5c55;
 }
 .invite-links > a.active {
-  opacity: 0.8;
+  background: #8f5c55;
+}
+.invite-links.sticky {
+  position: absolute;
 }
 
 #partners.show-this {
@@ -420,12 +432,12 @@ form.hide-this {
 }
 @media only screen and (max-width: 600px) {
   .invite-card.front {
-    height: 500px;
-    background-size: 430px;
+    height: 600px;
+    background-size: 500px;
     background-position: -40px -80px;
   }
-  .invite-card.back {
-    padding: 30px 20px 80px;
+  .invite-card.back .wrapper {
+    padding: 50px 20px 0;
   }
   .invite-card.back::after {
     background-position: -270px -35px;
@@ -435,6 +447,13 @@ form.hide-this {
   }
   .invite-card .content h3 {
     font-size: 23px;
+  }
+  .invite-links {
+    max-width: 530px;
+    padding: 0 15px;
+  }
+  .invite-links.sticky {
+    padding: 0;
   }
   .btn-wrapper {
     flex-direction: column;
