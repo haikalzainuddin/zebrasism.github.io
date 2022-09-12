@@ -32,9 +32,20 @@ h1, h2, h3, h4, h5, p {
 }
 .invite-lang {
   text-align: right;
+  z-index: 1;
+  position: relative;
 }
 .invite-lang a {
-  color: #000;
+  display: inline-block;
+  background: #652f30;
+  color: #fff;
+  padding: 7px 20px;
+  border-radius: 10px;
+  font-size: 12px;
+  transition: 0.3s all;
+}
+.invite-lang a:hover {
+  opacity: 0.8;
 }
 .invite-card {
   background-color: #fff;
@@ -46,20 +57,54 @@ h1, h2, h3, h4, h5, p {
   position: relative;
 }
 .invite-card.front {
-  background: url("/bunga1.0a2eda55.png");
-  background-size: 500px;
-  background-position: -15px -25px;
+  background: url("/bunga4.4866520b.png");
+  background-size: 630px;
+  background-position: -70px -130px;
   background-repeat: no-repeat;
   background-color: white;
-  border-bottom: 2px solid #f4f4f4;
+  position: relative;
+  margin-bottom: 25px;
+}
+.invite-card.front:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  content: "";
+  opacity: 0.6;
+  background: url("/bunga3.7144d8ee.png");
+  background-repeat: no-repeat;
+  background-size: 500px;
+  background-position: 50px -60px;
 }
 .invite-card.back {
   text-align: center;
-  height: 1000px;
-  padding: 50px;
+  height: initial;
+  padding: 50px 50px 100px;
+  position: relative;
+}
+.invite-card.back .wrapper {
+  z-index: 1;
+  position: relative;
+}
+.invite-card.back:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  content: "";
+  opacity: 0.5;
+  background: url("/bunga2.ded30bdf.png");
+  background-size: 700px;
+  background-position: -130px -75px;
+  background-repeat: no-repeat;
 }
 .invite-card .content {
   margin: 50px 0;
+  z-index: 1;
+  position: relative;
 }
 .invite-card .content p {
   margin: 0 0 20px;
@@ -83,15 +128,19 @@ h1, h2, h3, h4, h5, p {
 .invite-card .content:last-of-type {
   margin-bottom: 0;
 }
+.invite-front {
+  height: calc(100% - 32px);
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
 .invite-title {
-  position: absolute;
-  bottom: 25px;
-  right: 25px;
   text-align: right;
 }
 .invite-title h1 {
   margin: 20px 0;
-  font-size: 50px;
+  font-size: 70px;
+  font-weight: 600;
   font-family: "Dancing Script", cursive;
 }
 .invite-title h1 span {
@@ -99,7 +148,7 @@ h1, h2, h3, h4, h5, p {
 }
 .invite-title h3 {
   margin: 0;
-  font-size: 14px;
+  font-size: 17px;
   font-weight: 500;
 }
 .invite-links {
@@ -108,11 +157,12 @@ h1, h2, h3, h4, h5, p {
   left: 0;
   width: 100%;
   display: flex;
+  z-index: 1;
 }
 .invite-links > a {
   width: 100%;
   text-align: center;
-  background: #000;
+  background: #652f30;
   color: #fff;
   padding: 15px;
   transition: 0.3s all;
@@ -122,10 +172,6 @@ h1, h2, h3, h4, h5, p {
 }
 .invite-links > a.active {
   opacity: 0.8;
-}
-
-#partners {
-  display: none;
 }
 
 #partners.show-this {
@@ -185,12 +231,23 @@ form .form-row.submit p {
 }
 form .form-row.submit .submit-btn {
   color: #fff;
-  background: #000;
+  background: #652f30;
   transition: 0.3s all;
   cursor: pointer;
 }
 form .form-row.submit .submit-btn:hover {
   opacity: 0.8;
+}
+form .form-row.two-col {
+  display: flex;
+  margin: 0 0 20px -10px;
+}
+form .form-row.two-col > * {
+  width: 100%;
+  padding-left: 10px;
+}
+form .form-row.hide-this {
+  display: none;
 }
 form.fade-this {
   opacity: 0.2;
@@ -218,6 +275,7 @@ form.hide-this {
   opacity: 0;
   visibility: hidden;
   padding: 0 15px;
+  z-index: 1;
 }
 .popup-content {
   width: 500px;
@@ -225,10 +283,23 @@ form.hide-this {
   margin: 0 auto;
   background: white;
   padding: 20px;
+  z-index: 2;
 }
 .popup-close {
   text-align: right;
   cursor: pointer;
+  height: 25px;
+  width: 25px;
+  border-radius: 30px;
+  background: #652f30;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s all;
+}
+.popup-close:hover {
+  opacity: 0.8;
 }
 .popup-header {
   display: flex;
@@ -291,8 +362,8 @@ form.hide-this {
   border-radius: 5px;
   background: grey;
   margin-left: 10px;
-  background: #f8e5d2;
-  color: #000;
+  background: #652f30;
+  color: #fff;
   text-align: center;
 }
 .btn .fa, .btn .fab {
@@ -321,7 +392,7 @@ form.hide-this {
   font-size: 14px;
 }
 .contact-numbers a {
-  background: #000;
+  background: #652f30;
   border-radius: 5px;
   color: #fff;
   font-size: 14px;
@@ -337,13 +408,30 @@ form.hide-this {
 }
 
 @media only screen and (max-width: 1024px) {
+  .invite-title {
+    bottom: 150px;
+  }
+  .invite-title h1 {
+    font-size: 50px;
+  }
   .guests-list-wrapper {
     width: 1500px;
   }
 }
 @media only screen and (max-width: 600px) {
+  .invite-card.front {
+    height: 500px;
+    background-size: 430px;
+    background-position: -40px -80px;
+  }
   .invite-card.back {
-    padding: 30px;
+    padding: 30px 20px 80px;
+  }
+  .invite-card.back::after {
+    background-position: -270px -35px;
+  }
+  .invite-card .content {
+    margin: 30px 0;
   }
   .invite-card .content h3 {
     font-size: 23px;

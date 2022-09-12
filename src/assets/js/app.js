@@ -46,13 +46,13 @@ $(function(){
     })
 
     function showPartners() {
-        var partners = $("#partners")
+        var partners = $(".form-row.controlled")
         $("#status").change(function(){
             var _this = $('#status').val()
             if (_this == "attending") {
-                partners.addClass('show-this')
+                partners.removeClass('hide-this')
             } else {
-                partners.removeClass('show-this')
+                partners.addClass('hide-this')
             }
         })
     }
@@ -89,6 +89,7 @@ $(function(){
             phone: $('.phone').val(),
             status: $('.status').val(),
             pax: $('.pax').val(),
+            children: $('.children').val(),
             guest_of: $('.guest').val(),
             message: $('.message').val(),
         }
@@ -116,6 +117,7 @@ $(function(){
 
         let pax = []
         let status = []
+        let children = []
 
         // get guests list
         const getGuestList1 = query(
@@ -133,14 +135,28 @@ $(function(){
         const allDocs = querySnapshot.forEach((guest) => {
             let data = guest.data()
             let status_pax = ""
+            let status_children = ""
 
             pax.push(data.pax),
+            children.push(data.children),
             status.push(data.status)
+
+            console.log(data.pax)
 
             if (status == "not-attending") {
                 status_pax = "-"
+                status_children = "-"
             } else {
-                status_pax = data.pax
+                if (data.pax != "") {
+                    status_pax = data.pax
+                } else {
+                    status_pax = 0
+                }
+                if (data.children != "") {
+                    status_children = data.children
+                } else {
+                    status_children = 0
+                }
             }
 
             guestList.append(
@@ -149,29 +165,43 @@ $(function(){
                     <span>${data.phone}</span>
                     <span>${data.status.replace('-', ' ')}</span>
                     <span>${status_pax}</span>
+                    <span>${status_children}</span>
                     <span>${data.guest_of}</span>
                     <span>${data.message}</span>
                 </div>`
             )
         })
 
-        calcPax(status, pax)
+        calcPax(status, pax, children)
+
 
         // end - append list to page
 
     }
 
-    async function calcPax(status, pax) {
+    async function calcPax(status, pax, children) {
         let totalpax = 0
+        let totalchild = 0
         let totalpax_box = $('.totalpax-amount')
+        let totalchildren_box = $('.totalchildren-amount')
 
         for (let i = 0; i<pax.length; i++) {
             if (status[i] !== "not-attending") {
-                var eee = parseInt(pax[i])
-                totalpax = totalpax + parseInt(pax[i])
+                if (pax[i] !== "") {
+                    totalpax = totalpax + parseInt(pax[i])
+                } else {
+                    totalpax = totalpax + 0
+                }
+                if (children[i] !== "") {
+                    totalchild = totalchild + parseInt(children[i])
+                } else {
+                    totalchild = totalchild + 0
+                }
+                
             }
         }
 
         totalpax_box.append(totalpax)
+        totalchildren_box.append(totalchild)
     }
 })

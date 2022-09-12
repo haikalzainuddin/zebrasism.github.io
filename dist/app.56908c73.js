@@ -51339,14 +51339,14 @@ $(function () {
   });
 
   function showPartners() {
-    var partners = $("#partners");
+    var partners = $(".form-row.controlled");
     $("#status").change(function () {
       var _this = $('#status').val();
 
       if (_this == "attending") {
-        partners.addClass('show-this');
+        partners.removeClass('hide-this');
       } else {
-        partners.removeClass('show-this');
+        partners.addClass('hide-this');
       }
     });
   }
@@ -51396,6 +51396,7 @@ $(function () {
                 phone: $('.phone').val(),
                 status: $('.status').val(),
                 pax: $('.pax').val(),
+                children: $('.children').val(),
                 guest_of: $('.guest').val(),
                 message: $('.message').val()
               };
@@ -51436,19 +51437,20 @@ $(function () {
 
   function _getGuestList() {
     _getGuestList = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-      var pax, status, getGuestList1, querySnapshot, guestList, allDocs;
+      var pax, status, children, getGuestList1, querySnapshot, guestList, allDocs;
       return _regeneratorRuntime().wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
             case 0:
               pax = [];
-              status = []; // get guests list
+              status = [];
+              children = []; // get guests list
 
               getGuestList1 = (0, _firestore.query)((0, _firestore.collection)(firestore, 'guests'));
-              _context2.next = 5;
+              _context2.next = 6;
               return (0, _firestore.getDocs)(getGuestList1);
 
-            case 5:
+            case 6:
               querySnapshot = _context2.sent;
               // end - get guests list
               // append list to page
@@ -51456,19 +51458,32 @@ $(function () {
               allDocs = querySnapshot.forEach(function (guest) {
                 var data = guest.data();
                 var status_pax = "";
-                pax.push(data.pax), status.push(data.status);
+                var status_children = "";
+                pax.push(data.pax), children.push(data.children), status.push(data.status);
+                console.log(data.pax);
 
                 if (status == "not-attending") {
                   status_pax = "-";
+                  status_children = "-";
                 } else {
-                  status_pax = data.pax;
+                  if (data.pax != "") {
+                    status_pax = data.pax;
+                  } else {
+                    status_pax = 0;
+                  }
+
+                  if (data.children != "") {
+                    status_children = data.children;
+                  } else {
+                    status_children = 0;
+                  }
                 }
 
-                guestList.append("<div class=\"row\">\n                    <span>".concat(data.name, "</span>\n                    <span>").concat(data.phone, "</span>\n                    <span>").concat(data.status.replace('-', ' '), "</span>\n                    <span>").concat(status_pax, "</span>\n                    <span>").concat(data.guest_of, "</span>\n                    <span>").concat(data.message, "</span>\n                </div>"));
+                guestList.append("<div class=\"row\">\n                    <span>".concat(data.name, "</span>\n                    <span>").concat(data.phone, "</span>\n                    <span>").concat(data.status.replace('-', ' '), "</span>\n                    <span>").concat(status_pax, "</span>\n                    <span>").concat(status_children, "</span>\n                    <span>").concat(data.guest_of, "</span>\n                    <span>").concat(data.message, "</span>\n                </div>"));
               });
-              calcPax(status, pax); // end - append list to page
+              calcPax(status, pax, children); // end - append list to page
 
-            case 9:
+            case 10:
             case "end":
               return _context2.stop();
           }
@@ -51478,30 +51493,42 @@ $(function () {
     return _getGuestList.apply(this, arguments);
   }
 
-  function calcPax(_x, _x2) {
+  function calcPax(_x, _x2, _x3) {
     return _calcPax.apply(this, arguments);
   }
 
   function _calcPax() {
-    _calcPax = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(status, pax) {
-      var totalpax, totalpax_box, i, eee;
+    _calcPax = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3(status, pax, children) {
+      var totalpax, totalchild, totalpax_box, totalchildren_box, i;
       return _regeneratorRuntime().wrap(function _callee3$(_context3) {
         while (1) {
           switch (_context3.prev = _context3.next) {
             case 0:
               totalpax = 0;
+              totalchild = 0;
               totalpax_box = $('.totalpax-amount');
+              totalchildren_box = $('.totalchildren-amount');
 
               for (i = 0; i < pax.length; i++) {
                 if (status[i] !== "not-attending") {
-                  eee = parseInt(pax[i]);
-                  totalpax = totalpax + parseInt(pax[i]);
+                  if (pax[i] !== "") {
+                    totalpax = totalpax + parseInt(pax[i]);
+                  } else {
+                    totalpax = totalpax + 0;
+                  }
+
+                  if (children[i] !== "") {
+                    totalchild = totalchild + parseInt(children[i]);
+                  } else {
+                    totalchild = totalchild + 0;
+                  }
                 }
               }
 
               totalpax_box.append(totalpax);
+              totalchildren_box.append(totalchild);
 
-            case 4:
+            case 7:
             case "end":
               return _context3.stop();
           }
@@ -51539,7 +51566,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50252" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51155" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
