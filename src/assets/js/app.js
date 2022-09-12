@@ -1,4 +1,4 @@
-var $;
+let $;
 $ = require('jquery');
 
 // Import the functions you need from the SDKs you need
@@ -35,6 +35,7 @@ $(function(){
     $(document).ready(function(){
         showPartners()
         popupLinks();
+        stickyNav();
         if ($('.guests-list').length) {
             getGuestList()
         }
@@ -45,14 +46,33 @@ $(function(){
         submitForm()
     })
 
-    function showPartners() {
-        var partners = $(".form-row.controlled")
-        $("#status").change(function(){
-            var _this = $('#status').val()
-            if (_this == "attending") {
-                partners.removeClass('hide-this')
+    function stickyNav() {
+        let cardBack = $('.invite-card.back')
+        let cardBackPosition = cardBack.position().top + cardBack.outerHeight(true);
+        let windowHeight = $(window).height();
+        console.log(cardBackPosition)
+        $(window).scroll(function(){
+            let _this = $(this)
+            if (_this.scrollTop() + windowHeight < cardBackPosition - 100) {
+                $('.invite-links').removeClass('sticky')
             } else {
-                partners.addClass('hide-this')
+                $('.invite-links').addClass('sticky')
+            }
+        })
+    }
+
+    function showPartners() {
+        let amount = $(".form-row.controlled")
+        let pax = $('.pax')
+        let child = $('.children')
+        $("#status").change(function(){
+            let _this = $('#status').val()
+            if (_this == "attending") {
+                amount.removeClass('hide-this')
+                pax.attr('required', true)
+                child.attr('required', true)
+            } else {
+                amount.addClass('hide-this')
             }
         })
     }

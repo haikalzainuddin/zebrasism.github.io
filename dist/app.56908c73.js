@@ -51328,6 +51328,7 @@ $(function () {
   $(document).ready(function () {
     showPartners();
     popupLinks();
+    stickyNav();
 
     if ($('.guests-list').length) {
       getGuestList();
@@ -51338,15 +51339,35 @@ $(function () {
     submitForm();
   });
 
+  function stickyNav() {
+    var cardBack = $('.invite-card.back');
+    var cardBackPosition = cardBack.position().top + cardBack.outerHeight(true);
+    var windowHeight = $(window).height();
+    console.log(cardBackPosition);
+    $(window).scroll(function () {
+      var _this = $(this);
+
+      if (_this.scrollTop() + windowHeight < cardBackPosition - 100) {
+        $('.invite-links').removeClass('sticky');
+      } else {
+        $('.invite-links').addClass('sticky');
+      }
+    });
+  }
+
   function showPartners() {
-    var partners = $(".form-row.controlled");
+    var amount = $(".form-row.controlled");
+    var pax = $('.pax');
+    var child = $('.children');
     $("#status").change(function () {
       var _this = $('#status').val();
 
       if (_this == "attending") {
-        partners.removeClass('hide-this');
+        amount.removeClass('hide-this');
+        pax.attr('required', true);
+        child.attr('required', true);
       } else {
-        partners.addClass('hide-this');
+        amount.addClass('hide-this');
       }
     });
   }
@@ -51566,7 +51587,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51155" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53634" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -78,7 +78,7 @@ h1, h2, h3, h4, h5, p {
                 height: 100%;
                 width: 100%;
                 content: '';
-                opacity: 0.6;
+                opacity: 1;
                 background: url('/assets/images/bunga3.png');
                 background-repeat: no-repeat;
                 background-size: 500px;
@@ -88,11 +88,12 @@ h1, h2, h3, h4, h5, p {
         &.back {
             text-align: center;
             height: initial;
-            padding: 50px 50px 100px;
             position: relative;
+            padding: 0;
             .wrapper {
                 z-index: 1;
                 position: relative;
+                padding: 50px 50px 0;
             }
             &:after {
                 position: absolute;
@@ -103,8 +104,8 @@ h1, h2, h3, h4, h5, p {
                 content: '';
                 opacity: 0.5;
                 background: url('/assets/images/bunga2.png');
-                background-size: 700px;
-                background-position: -130px -75px;
+                background-size: 800px;
+                background-position: -225px -70px;
                 background-repeat: no-repeat;
             }
         }
@@ -119,9 +120,6 @@ h1, h2, h3, h4, h5, p {
                 font-size: 28px;
                 font-weight: 600;
                 font-family: 'Dancing Script', cursive;
-                // font-size: 35px;
-                // font-weight: 500;
-                // font-family: 'Bonheur Royale', cursive;
                 span {
                     display: block;
                     margin: 10px 0;;
@@ -150,7 +148,6 @@ h1, h2, h3, h4, h5, p {
         h1 {
             margin: 20px 0;
             font-size: 70px;
-            // font-family: 'Niconne', cursive;
             font-weight: 600;
             font-family: 'Dancing Script', cursive;
             span {
@@ -164,12 +161,20 @@ h1, h2, h3, h4, h5, p {
         }
     }
     &-links {
-        position: absolute;
-        bottom: 0;
-        left: 0;
         width: 100%;
+        max-width: 500px;
         display: flex;
         z-index: 1;
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        &-wrapper {
+            height: 55px;
+            position: relative;
+            margin-top: 50px;
+            background: $third-color;
+        }
         > a {
             width: 100%;
             text-align: center;
@@ -178,11 +183,14 @@ h1, h2, h3, h4, h5, p {
             padding: 15px;
             transition: 0.3s all;
             &:hover {
-                opacity: 0.8;
+                background: $first-color;
             }
             &.active {
-                opacity: 0.8;
+                background: $first-color;
             }
+        }
+        &.sticky {
+            position: absolute;
         }
     }
 }
@@ -443,12 +451,14 @@ form {
     .invite {
         &-card {
             &.front {
-                height: 500px;
-                background-size: 430px;
+                height: 600px;
+                background-size: 500px;
                 background-position: -40px -80px;
             }
             &.back {
-                padding: 30px 20px 80px;
+                .wrapper {
+                    padding: 50px 20px 0;
+                }
                 &::after {
                     background-position: -270px -35px;
                 }
@@ -458,6 +468,13 @@ form {
                 h3 {
                     font-size: 23px;
                 }
+            }
+        }
+        &-links {
+            max-width: 530px;
+            padding: 0 15px;
+            &.sticky {
+                padding: 0;
             }
         }
     }
