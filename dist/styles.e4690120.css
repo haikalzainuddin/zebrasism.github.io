@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
 }
@@ -16,14 +17,15 @@ h1, h2, h3, h4, h5, p {
   margin: 0;
 }
 
-.ovh {
-  overflow: hidden;
-}
-
 .invite-page {
   min-height: 100vh;
   padding: 50px 0;
   background-color: #d8d8d8;
+  transition: 0.3s all;
+}
+.invite-page.hide-this {
+  opacity: 0;
+  visibility: hidden;
 }
 .invite-container {
   display: flex;
@@ -57,7 +59,7 @@ h1, h2, h3, h4, h5, p {
   position: relative;
 }
 .invite-card.front {
-  background: url("/bunga4.4866520b.png");
+  background: url("/bunga-new.0990dabf.png");
   background-size: 630px;
   background-position: -70px -130px;
   background-repeat: no-repeat;
@@ -97,7 +99,7 @@ h1, h2, h3, h4, h5, p {
   width: 100%;
   content: "";
   opacity: 0.5;
-  background: url("/bunga2.ded30bdf.png");
+  background: url("/bunga-2-new.8231766d.png");
   background-size: 800px;
   background-position: -225px -70px;
   background-repeat: no-repeat;
@@ -193,6 +195,11 @@ h1, h2, h3, h4, h5, p {
 .invite-links.sticky {
   position: absolute;
 }
+.invite-end {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
 
 #partners.show-this {
   display: block;
@@ -233,6 +240,25 @@ form input, form select, form textarea {
   border-radius: 5px;
   border: 1px solid #ddd;
 }
+form select, form option {
+  background: #fff;
+  color: #000;
+  -webkit-appearance: none;
+}
+form .select-wrapper {
+  position: relative;
+}
+form .select-wrapper:after {
+  content: "▼";
+  font: normal normal normal 12px/1 FontAwesome;
+  color: #000;
+  right: 14px;
+  top: 12px;
+  height: 37px;
+  padding: 0;
+  position: absolute;
+  pointer-events: none;
+}
 form textarea {
   height: 100px;
 }
@@ -254,6 +280,9 @@ form .form-row.submit .submit-btn {
   color: #fff;
   background: #652f30;
   transition: 0.3s all;
+  display: block;
+  height: 37px;
+  border-radius: 5px;
   cursor: pointer;
 }
 form .form-row.submit .submit-btn:hover {
@@ -344,9 +373,26 @@ form.hide-this {
   height: 250px;
 }
 
+.page-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s all;
+}
+.page-loader.hide-this {
+  opacity: 0;
+  visibility: hidden;
+}
+
 .loader {
   border: 5px solid #f3f3f3;
-  border-top: 5px solid #000;
+  border-top: 5px solid #652f30;
   border-radius: 50%;
   width: 40px;
   height: 40px;

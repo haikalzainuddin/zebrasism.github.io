@@ -24,7 +24,6 @@ h1, h2, h3, h4, h5, p {
 }
 
 .ovh {
-    overflow: hidden;
 }
 
 .invite {
@@ -32,6 +31,11 @@ h1, h2, h3, h4, h5, p {
         min-height: 100vh;
         padding: 50px 0;
         background-color: #d8d8d8;
+        transition: 0.3s all;
+        &.hide-this {
+            opacity: 0;
+            visibility: hidden;
+        }
     }
     &-container {
         display: flex;
@@ -64,7 +68,7 @@ h1, h2, h3, h4, h5, p {
         margin: 0 auto;
         position: relative;
         &.front {
-            background: url('/assets/images/bunga4.png');
+            background: url('/assets/images/bunga-new.png');
             background-size: 630px;
             background-position: -70px -130px;
             background-repeat: no-repeat;
@@ -103,7 +107,7 @@ h1, h2, h3, h4, h5, p {
                 width: 100%;
                 content: '';
                 opacity: 0.5;
-                background: url('/assets/images/bunga2.png');
+                background: url('/assets/images/bunga-2-new.png');
                 background-size: 800px;
                 background-position: -225px -70px;
                 background-repeat: no-repeat;
@@ -201,6 +205,11 @@ h1, h2, h3, h4, h5, p {
             position: absolute;
         }
     }
+    &-end {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+    }
 }
 
 #partners.show-this {
@@ -241,6 +250,25 @@ form {
         border-radius: 5px;
         border: 1px solid #ddd;
     }
+    select, option {
+        background: #fff;
+        color: #000;
+        -webkit-appearance: none;
+    }
+    .select-wrapper {
+        position: relative;
+        &:after {
+            content: '\0025BC';
+            font: normal normal normal 12px/1 FontAwesome;
+            color: #000;
+            right: 14px;
+            top: 12px;
+            height: 37px;
+            padding: 0;
+            position: absolute;
+            pointer-events: none;
+        }
+    }
     textarea {
         height: 100px;
     }
@@ -260,6 +288,9 @@ form {
                 color: #fff;
                 background: $third-color;
                 transition: 0.3s all;
+                display: block;
+                height: 37px;
+                border-radius: 5px;
                 cursor: pointer;
                 &:hover {
                     opacity: 0.8;
@@ -353,11 +384,26 @@ form {
     }
 }
 
-
+.page-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s all;
+    &.hide-this {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
 
 .loader {
     border: 5px solid #f3f3f3;
-    border-top: 5px solid #000;
+    border-top: 5px solid $third-color;
     border-radius: 50%;
     width: 40px;
     height: 40px;

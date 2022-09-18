@@ -1,12 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-    @partial("./partials/head.html")
-<body class="guests_page hide-page">
+@partial("./partials/head.html")
 
-    
-    @partial("./components/totalPax.html")
-    @partial("./components/guestsList.html")
+    <div class="guests_page hide-page">
+        <div class="sort-status">
+            <a href="#" data-status="attending">Attending</a>
+            <a href="#" data-status="not-attending">Not Attending</a>
+        </div>
+        
+        <div class="sort-guestof">
+            <a href="#" data-guestof="All">All</a>
+            <a href="#" data-guestof="Zainuddin">Zainuddin</a>
+            <a href="#" data-guestof="Shahnaz">Shahnaz</a>
+            <a href="#" data-guestof="Haikal">Haikal</a>
+            <a href="#" data-guestof="Moh'd Rafi'">Moh'd Rafi'</a>
+            <a href="#" data-guestof="Juhariah">Juhariah</a>
+            <a href="#" data-guestof="Hanna">Hanna</a>
+            <a href="#" data-guestof="Hanis">Hanis</a>
+            <a href="#" data-guestof="Hazwan">Hazwan</a>
+        </div>
+        @partial("./components/totalPax.html")
+        @partial("./components/guestsList.html")
+    </div>
 
-    <script src="./assets/js/app.js" defer></script>
-</body>
-</html>
+
+@partial("./partials/footer.html")

@@ -189,7 +189,7 @@ var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"D:\\dev\\zebrasism.github.io\\src\\assets\\images\\bunga4.png":[["bunga4.4866520b.png","assets/images/bunga4.png"],"assets/images/bunga4.png"],"D:\\dev\\zebrasism.github.io\\src\\assets\\images\\bunga3.png":[["bunga3.7144d8ee.png","assets/images/bunga3.png"],"assets/images/bunga3.png"],"D:\\dev\\zebrasism.github.io\\src\\assets\\images\\bunga2.png":[["bunga2.ded30bdf.png","assets/images/bunga2.png"],"assets/images/bunga2.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"D:\\dev\\zebrasism.github.io\\src\\assets\\images\\bunga-new.png":[["bunga-new.0990dabf.png","assets/images/bunga-new.png"],"assets/images/bunga-new.png"],"D:\\dev\\zebrasism.github.io\\src\\assets\\images\\bunga3.png":[["bunga3.7144d8ee.png","assets/images/bunga3.png"],"assets/images/bunga3.png"],"D:\\dev\\zebrasism.github.io\\src\\assets\\images\\bunga-2-new.png":[["bunga-2-new.8231766d.png","assets/images/bunga-2-new.png"],"assets/images/bunga-2-new.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -217,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61467" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63651" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

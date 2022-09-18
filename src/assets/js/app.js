@@ -38,17 +38,19 @@ $(function(){
     $(document).ready(function(){
         showPartners()
         popupLinks();
+        pageLoad();
         console.log(process.env.S3_BUCKET) 
         if ($('.invite-links').length) {
             stickyNav();
         }
         if ($('.guests_page').length) {
-            let pass = prompt("Enter Password")
-            if (pass == "sub@ng_PJ2022") {
+            // let pass = prompt("Enter Password")
+            // if (pass == "sub@ng_PJ2022") {
                 getGuestList()
-            } else {
-                window.location = "/"
-            }
+                guestsSort()
+            // } else {
+            //     window.location = "/"
+            // }
         }
     })
 
@@ -56,6 +58,15 @@ $(function(){
         e.preventDefault();
         submitForm()
     })
+
+    function pageLoad() {
+        setTimeout(function(){
+            $('.page-loader').addClass('hide-this')
+        }, 1500)
+        setTimeout(function(){
+            $('.invite-page').removeClass('hide-this')
+        }, 1700)
+    }
 
     function stickyNav() {
         let cardBack = $('.invite-card.back')
@@ -135,8 +146,6 @@ $(function(){
             form.addClass('fade-this')
             loader.addClass('show-this')
 
-            console.log(status)
-
             setTimeout(function(){
                 form.remove();
                 loader.remove();
@@ -195,13 +204,13 @@ $(function(){
             }
 
             guestList.append(
-                `<div class="row">
+                `<div class="row row-data">
                     <span>${data.name}</span>
                     <span>${data.phone}</span>
-                    <span>${data.status.replace('-', ' ')}</span>
+                    <span class="status">${data.status.replace('-', ' ')}</span>
                     <span>${status_pax}</span>
                     <span>${status_children}</span>
-                    <span>${data.guest_of}</span>
+                    <span class="guest_of">${data.guest_of}</span>
                     <span>${data.message}</span>
                 </div>`
             )
@@ -238,5 +247,42 @@ $(function(){
 
         totalpax_box.append(totalpax)
         totalchildren_box.append(totalchild)
+    }
+
+    function guestsSort() {
+        let sortStatus = $('.sort-status a')
+        let sortGuestOf = $('.sort-guestof a')
+
+        sortStatus.on('click', function(e){
+            let data_row = $('.guests-list .row-data')
+            e.preventDefault();
+            let _this = $(this)
+            let stat = _this.data().status.replace('-', ' ')
+            data_row.each(function(){
+                $(this).show();
+                if ($(this).find('.status').text() != stat) {
+                    $(this).hide();
+                }
+            })
+        })
+
+        sortGuestOf.on('click', function(e){
+            let data_row = $('.guests-list .row-data')
+            e.preventDefault();
+            let _this = $(this)
+            let guestof = _this.data().guestof
+            if (guestof == "All") {
+                data_row.each(function(){
+                    $(this).show();
+                })
+            } else {
+                data_row.each(function(){
+                    $(this).show();
+                    if ($(this).find('.guest_of').text() != guestof) {
+                        $(this).hide();
+                    } 
+                })
+            }
+        })
     }
 })
