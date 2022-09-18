@@ -1,6 +1,9 @@
 let $;
 $ = require('jquery');
 
+require('dotenv').config({path: '/.env'})
+
+
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs, setDoc, doc, docs, addDoc, getDoc, query } from "firebase/firestore";
@@ -35,9 +38,17 @@ $(function(){
     $(document).ready(function(){
         showPartners()
         popupLinks();
-        stickyNav();
-        if ($('.guests-list').length) {
-            getGuestList()
+        console.log(process.env.S3_BUCKET) 
+        if ($('.invite-links').length) {
+            stickyNav();
+        }
+        if ($('.guests_page').length) {
+            let pass = prompt("Enter Password")
+            if (pass == "sub@ng_PJ2022") {
+                getGuestList()
+            } else {
+                window.location = "/"
+            }
         }
     })
 
@@ -50,13 +61,17 @@ $(function(){
         let cardBack = $('.invite-card.back')
         let cardBackPosition = cardBack.position().top + cardBack.outerHeight(true);
         let windowHeight = $(window).height();
-        console.log(cardBackPosition)
         $(window).scroll(function(){
             let _this = $(this)
             if (_this.scrollTop() + windowHeight < cardBackPosition - 100) {
                 $('.invite-links').removeClass('sticky')
             } else {
                 $('.invite-links').addClass('sticky')
+            }
+            if (_this.scrollTop() > 50) {
+                $('.invite-links').addClass('show-this')
+            } else {
+                $('.invite-links').removeClass('show-this')
             }
         })
     }
@@ -144,6 +159,8 @@ $(function(){
             collection(firestore, 'guests')
         )
 
+        $('.guests_page').removeClass('hide-page')
+
         const querySnapshot = await getDocs(getGuestList1)
 
         // end - get guests list
@@ -160,8 +177,6 @@ $(function(){
             pax.push(data.pax),
             children.push(data.children),
             status.push(data.status)
-
-            console.log(data.pax)
 
             if (status == "not-attending") {
                 status_pax = "-"
