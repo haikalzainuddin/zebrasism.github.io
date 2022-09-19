@@ -51801,26 +51801,35 @@ $(function () {
   $(document).ready(function () {
     showPartners();
     popupLinks();
-    console.log("YOURS3BUCKET");
+    pageLoad();
+    console.log(undefined);
 
     if ($('.invite-links').length) {
       stickyNav();
     }
 
     if ($('.guests_page').length) {
-      var pass = prompt("Enter Password");
-
-      if (pass == "sub@ng_PJ2022") {
-        getGuestList();
-      } else {
-        window.location = "/";
-      }
+      // let pass = prompt("Enter Password")
+      // if (pass == "sub@ng_PJ2022") {
+      getGuestList();
+      guestsSort(); // } else {
+      //     window.location = "/"
+      // }
     }
   });
   $('#rsvpForm').submit(function (e) {
     e.preventDefault();
     submitForm();
   });
+
+  function pageLoad() {
+    setTimeout(function () {
+      $('.page-loader').addClass('hide-this');
+    }, 1500);
+    setTimeout(function () {
+      $('.invite-page').removeClass('hide-this');
+    }, 1700);
+  }
 
   function stickyNav() {
     var cardBack = $('.invite-card.back');
@@ -51863,7 +51872,7 @@ $(function () {
   function popupLinks() {
     if ($('.popup-btn').length) {
       var open_popup = $('.popup-btn');
-      open_popup.on('click', function (e) {
+      open_popup.on('click touchend', function (e) {
         var _this = $(this);
 
         e.preventDefault();
@@ -51881,6 +51890,17 @@ $(function () {
         $('body').removeClass('ovh');
         $(this).closest('.popup').removeClass('show-this');
         $('.popup-btn.active').removeClass('active');
+      });
+      $("body").click(function () {
+        $('body').removeClass('ovh');
+        $('.popup.show-this').removeClass('show-this');
+        $('.popup-btn.active').removeClass('active');
+      });
+      $(".popup-content").click(function (e) {
+        e.stopPropagation();
+      });
+      $(".popup-btn").click(function (e) {
+        e.stopPropagation();
       });
     }
   }
@@ -51916,26 +51936,25 @@ $(function () {
             case 8:
               form.addClass('fade-this');
               loader.addClass('show-this');
-              console.log(status);
               setTimeout(function () {
                 form.remove();
                 loader.remove();
                 submitMessage.addClass('show-this');
               }, 1000);
-              _context.next = 17;
+              _context.next = 16;
               break;
 
-            case 14:
-              _context.prev = 14;
+            case 13:
+              _context.prev = 13;
               _context.t0 = _context["catch"](5);
               console.log('Something wrong submitting the form. Please contact Haikal');
 
-            case 17:
+            case 16:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[5, 14]]);
+      }, _callee, null, [[5, 13]]);
     }));
     return _submitForm.apply(this, arguments);
   }
@@ -51988,7 +52007,7 @@ $(function () {
                   }
                 }
 
-                guestList.append("<div class=\"row\">\n                    <span>".concat(data.name, "</span>\n                    <span>").concat(data.phone, "</span>\n                    <span>").concat(data.status.replace('-', ' '), "</span>\n                    <span>").concat(status_pax, "</span>\n                    <span>").concat(status_children, "</span>\n                    <span>").concat(data.guest_of, "</span>\n                    <span>").concat(data.message, "</span>\n                </div>"));
+                guestList.append("<div class=\"row row-data\">\n                    <span>".concat(data.name, "</span>\n                    <span>").concat(data.phone, "</span>\n                    <span class=\"status\">").concat(data.status.replace('-', ' '), "</span>\n                    <span>").concat(status_pax, "</span>\n                    <span>").concat(status_children, "</span>\n                    <span class=\"guest_of\">").concat(data.guest_of, "</span>\n                    <span>").concat(data.message, "</span>\n                </div>"));
               });
               calcPax(status, pax, children); // end - append list to page
 
@@ -52046,6 +52065,49 @@ $(function () {
     }));
     return _calcPax.apply(this, arguments);
   }
+
+  function guestsSort() {
+    var sortStatus = $('.sort-status a');
+    var sortGuestOf = $('.sort-guestof a');
+    sortStatus.on('click', function (e) {
+      var data_row = $('.guests-list .row-data');
+      e.preventDefault();
+
+      var _this = $(this);
+
+      var stat = _this.data().status.replace('-', ' ');
+
+      data_row.each(function () {
+        $(this).show();
+
+        if ($(this).find('.status').text() != stat) {
+          $(this).hide();
+        }
+      });
+    });
+    sortGuestOf.on('click', function (e) {
+      var data_row = $('.guests-list .row-data');
+      e.preventDefault();
+
+      var _this = $(this);
+
+      var guestof = _this.data().guestof;
+
+      if (guestof == "All") {
+        data_row.each(function () {
+          $(this).show();
+        });
+      } else {
+        data_row.each(function () {
+          $(this).show();
+
+          if ($(this).find('.guest_of').text() != guestof) {
+            $(this).hide();
+          }
+        });
+      }
+    });
+  }
 });
 },{"jquery":"../node_modules/jquery/dist/jquery.js","dotenv":"../node_modules/dotenv/lib/main.js","firebase/app":"../node_modules/firebase/app/dist/index.esm.js","firebase/firestore":"../node_modules/firebase/firestore/dist/index.esm.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -52075,7 +52137,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61467" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64593" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
