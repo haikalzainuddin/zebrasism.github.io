@@ -17,6 +17,10 @@ h1, h2, h3, h4, h5, p {
   margin: 0;
 }
 
+.ovh {
+  overflow: hidden;
+}
+
 .invite-page {
   min-height: 100vh;
   padding: 50px 0;
@@ -161,6 +165,7 @@ h1, h2, h3, h4, h5, p {
   z-index: 1;
   position: fixed;
   bottom: 0;
+  height: 51px;
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
@@ -507,6 +512,7 @@ form.hide-this {
     padding: 50px 20px 0;
   }
   .invite-card.back::after {
+    background-size: 750px;
     background-position: -270px -35px;
   }
   .invite-card .content {
@@ -536,6 +542,28 @@ form.hide-this {
   }
   .contact-numbers a span {
     display: none;
+  }
+  .popup-body {
+    max-height: 500px;
+    overflow-y: scroll;
+    /* width */
+    /* Track */
+    /* Handle */
+    /* Handle on hover */
+  }
+  .popup-body::-webkit-scrollbar {
+    width: 5px;
+  }
+  .popup-body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+  }
+  .popup-body::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+  }
+  .popup-body::-webkit-scrollbar-thumb:hover {
+    background: #555;
   }
 }
 

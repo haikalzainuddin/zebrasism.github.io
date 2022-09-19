@@ -106,7 +106,7 @@ $(function(){
     function popupLinks() {
         if ($('.popup-btn').length) {
             let open_popup = $('.popup-btn')
-            open_popup.on('click', function(e){
+            open_popup.on('click touchend', function(e){
                 let _this = $(this)
                 e.preventDefault();
                 _this.addClass('active')
@@ -120,7 +120,19 @@ $(function(){
                 $('body').removeClass('ovh')
                 $(this).closest('.popup').removeClass('show-this')
                 $('.popup-btn.active').removeClass('active')
-            })
+            }) 
+
+            $("body").click(function() {
+                $('body').removeClass('ovh')
+                $('.popup.show-this').removeClass('show-this')
+                $('.popup-btn.active').removeClass('active')
+              });
+              $(".popup-content").click(function(e) {
+                e.stopPropagation();
+              });
+              $(".popup-btn").click(function(e) {
+                e.stopPropagation();
+              });
         }
     }
 

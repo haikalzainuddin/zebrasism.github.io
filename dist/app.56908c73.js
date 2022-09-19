@@ -51872,7 +51872,7 @@ $(function () {
   function popupLinks() {
     if ($('.popup-btn').length) {
       var open_popup = $('.popup-btn');
-      open_popup.on('click', function (e) {
+      open_popup.on('click touchend', function (e) {
         var _this = $(this);
 
         e.preventDefault();
@@ -51890,6 +51890,17 @@ $(function () {
         $('body').removeClass('ovh');
         $(this).closest('.popup').removeClass('show-this');
         $('.popup-btn.active').removeClass('active');
+      });
+      $("body").click(function () {
+        $('body').removeClass('ovh');
+        $('.popup.show-this').removeClass('show-this');
+        $('.popup-btn.active').removeClass('active');
+      });
+      $(".popup-content").click(function (e) {
+        e.stopPropagation();
+      });
+      $(".popup-btn").click(function (e) {
+        e.stopPropagation();
       });
     }
   }
@@ -52126,7 +52137,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63651" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64593" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
