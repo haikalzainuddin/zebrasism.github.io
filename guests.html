@@ -27,21 +27,35 @@
         </div>
 
     <div class="guests_page hide-page">
-        <div class="sort-status">
-            <a href="#" data-status="attending">Attending</a>
-            <a href="#" data-status="not-attending">Not Attending</a>
-        </div>
-        
-        <div class="sort-guestof">
-            <a href="#" data-guestof="All">All</a>
-            <a href="#" data-guestof="Zainuddin">Zainuddin</a>
-            <a href="#" data-guestof="Shahnaz">Shahnaz</a>
-            <a href="#" data-guestof="Haikal">Haikal</a>
-            <a href="#" data-guestof="Moh'd Rafi'">Moh'd Rafi'</a>
-            <a href="#" data-guestof="Juhariah">Juhariah</a>
-            <a href="#" data-guestof="Hanna">Hanna</a>
-            <a href="#" data-guestof="Hanis">Hanis</a>
-            <a href="#" data-guestof="Hazwan">Hazwan</a>
+        <div class="guests_page_filters">
+            <h4>Filters</h4>
+            <div class="guests_page_filters_wrapper">
+                <div class="dropdown">
+                    <span>Sort by Status</span>
+                    <a href="#" class="dropdown-btn"><span>All</span><i class="fa fa-angle-down"></i></a>
+                    <div class="dropdown-box sort-status">
+                        <a href="#" data-status="All">All</a>
+                        <a href="#" data-status="attending">Attending</a>
+                        <a href="#" data-status="not-attending">Not Attending</a>
+                    </div>
+                </div>
+                <span>|</span>
+                <div class="dropdown">
+                    <span>Sort by Guest Of</span>
+                    <a href="#" class="dropdown-btn"><span>All</span><i class="fa fa-angle-down"></i></a>
+                    <div class="dropdown-box sort-guestof">
+                        <a href="#" data-guestof="All">All</a>
+                        <a href="#" data-guestof="Zainuddin">Zainuddin</a>
+                        <a href="#" data-guestof="Shahnaz">Shahnaz</a>
+                        <a href="#" data-guestof="Haikal">Haikal</a>
+                        <a href="#" data-guestof="Moh'd Rafi'">Moh'd Rafi'</a>
+                        <a href="#" data-guestof="Juhariah">Juhariah</a>
+                        <a href="#" data-guestof="Hanna">Hanna</a>
+                        <a href="#" data-guestof="Hanis">Hanis</a>
+                        <a href="#" data-guestof="Hazwan">Hazwan</a>
+                    </div>
+                </div>
+            </div>
         </div>
         <section class="totalpax">
     <div>
@@ -66,6 +80,8 @@
         </div>
     </div>
 </section>
+
+        <div class="total_individual hide-this">Total guests for <span class="pax_name"></span>: <span class="pax_amount"></span> Pax | <span class="pax_child"></span> Children</div>
     </div>
 
 
