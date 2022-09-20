@@ -48,6 +48,7 @@ $(function(){
             // if (pass == "sub@ng_PJ2022") {
                 getGuestList()
                 guestsSort()
+                dropDown()
             // } else {
             //     window.location = "/"
             // }
@@ -220,8 +221,8 @@ $(function(){
                     <span>${data.name}</span>
                     <span>${data.phone}</span>
                     <span class="status">${data.status.replace('-', ' ')}</span>
-                    <span>${status_pax}</span>
-                    <span>${status_children}</span>
+                    <span class="individual_amount">${status_pax}</span>
+                    <span class="individual_children">${status_children}</span>
                     <span class="guest_of">${data.guest_of}</span>
                     <span>${data.message}</span>
                 </div>`
@@ -261,6 +262,21 @@ $(function(){
         totalchildren_box.append(totalchild)
     }
 
+    function dropDown() {
+        let dropdown = $('.dropdown')
+
+        dropdown.each(function(){
+            let _this = $(this)
+            let dd_btn = _this.find('.dropdown-btn')
+            let dd_box = _this.find('.dropdown-box')
+
+            dd_btn.click(function(e){
+                e.preventDefault()
+                dd_box.toggleClass('show-this')
+            })
+        })
+    }
+
     function guestsSort() {
         let sortStatus = $('.sort-status a')
         let sortGuestOf = $('.sort-guestof a')
@@ -268,14 +284,25 @@ $(function(){
         sortStatus.on('click', function(e){
             let data_row = $('.guests-list .row-data')
             e.preventDefault();
+            $('.total_individual').hide();
             let _this = $(this)
             let stat = _this.data().status.replace('-', ' ')
-            data_row.each(function(){
-                $(this).show();
-                if ($(this).find('.status').text() != stat) {
-                    $(this).hide();
-                }
-            })
+            
+            _this.parent().parent().siblings().find('.dropdown-btn span').text("All")
+            _this.parent().removeClass('show-this')
+            _this.parent().parent().find('.dropdown-btn span').text(_this.text())
+            if (stat == "All") {
+                data_row.each(function(){
+                    $(this).show();
+                })
+            } else {
+                data_row.each(function(){
+                    $(this).show();
+                    if ($(this).find('.status').text() != stat) {
+                        $(this).hide();
+                    }
+                })
+            }
         })
 
         sortGuestOf.on('click', function(e){
@@ -283,17 +310,40 @@ $(function(){
             e.preventDefault();
             let _this = $(this)
             let guestof = _this.data().guestof
+            let individual = $('.total_individual')
+            let amount = 0;
+            let children = 0
+
+            _this.parent().parent().siblings().find('.dropdown-btn span').text("All")
+            _this.parent().removeClass('show-this')
+            _this.parent().parent().find('.dropdown-btn span').text(_this.text())
             if (guestof == "All") {
                 data_row.each(function(){
                     $(this).show();
                 })
+                individual.hide();
             } else {
                 data_row.each(function(){
                     $(this).show();
                     if ($(this).find('.guest_of').text() != guestof) {
                         $(this).hide();
-                    } 
+                    } else {
+                        if ($(this).find('.individual_amount').text() != "-") {
+                            amount = amount + parseInt($(this).find('.individual_amount').text())
+                        } else {
+                            amount = amount + 0;
+                        }
+                        if ($(this).find('.individual_children').text() != "-") {
+                            children = children + parseInt($(this).find('.individual_children').text())
+                        } else {
+                            children = children + 0;
+                        }
+                    }
                 })
+                individual.show();
+                individual.find('.pax_name').text(guestof)
+                individual.find('.pax_amount').text(amount)
+                individual.find('.pax_child').text(children)
             }
         })
     }

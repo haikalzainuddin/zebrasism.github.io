@@ -500,6 +500,54 @@ form {
         opacity: 0;
         visibility: hidden;
     }
+    &_filters {
+        display: flex;
+        flex-direction: column;
+        padding: 15px 15px 0;
+        &_wrapper {
+            display: flex;
+            margin-top: 10px;
+            > span {
+                padding: 0 15px;
+            }
+        }
+    }
+}
+
+.dropdown {
+    position: relative;
+    &-btn {
+        padding: 0 10px;
+        border-bottom: 1px solid $first-color;
+        color: #000;
+        .fa {
+            margin-left: 5px;
+        }
+    }
+    &-box {
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        width: 100%;
+        background: $first-color;
+        > a {
+            padding: 5px 10px;
+            color: #fff;
+        }
+        &.show-this {
+            opacity: 1;
+            visibility: visible;
+            height: initial;
+        }
+    }
+}
+
+.total_individual {
+    display: none;
+    text-align: center;
 }
 
 @media only screen and (max-width: 1024px) {
