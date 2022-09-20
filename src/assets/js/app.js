@@ -36,6 +36,9 @@ const guestsList = doc(firestore, 'guests/igvIbV8o4QkfVNu6pTVf')
 $(function(){
 
     $(document).ready(function(){
+        if (window.location.href == "https://invyte.digital") {
+            window.location = "https://invyte.digital/HaikalHanna"
+        }
         showPartners()
         popupLinks();
         pageLoad();
@@ -44,14 +47,14 @@ $(function(){
             stickyNav();
         }
         if ($('.guests_page').length) {
-            // let pass = prompt("Enter Password")
-            // if (pass == "sub@ng_PJ2022") {
+            let pass = prompt("Enter Password")
+            if (pass == "sub@ng_PJ2022") {
                 getGuestList()
                 guestsSort()
                 dropDown()
-            // } else {
-            //     window.location = "/"
-            // }
+            } else {
+                window.location = "/HaikalHanna"
+            }
         }
     })
 
