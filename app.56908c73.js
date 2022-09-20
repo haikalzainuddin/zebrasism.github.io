@@ -51799,7 +51799,7 @@ var firestore = (0, _firestore.getFirestore)();
 var guestsList = (0, _firestore.doc)(firestore, 'guests/igvIbV8o4QkfVNu6pTVf');
 $(function () {
   $(document).ready(function () {
-    if (window.location.href == "https://invyte.digital") {
+    if (window.location.href == "https://invyte.digital/") {
       window.location = "https://invyte.digital/HaikalHanna";
     }
 
@@ -52200,7 +52200,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59321" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59774" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
