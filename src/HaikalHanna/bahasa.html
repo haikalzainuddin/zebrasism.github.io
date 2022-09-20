@@ -88,7 +88,7 @@
                     </div>
     
                     <div class="content">
-                        <h5>Sila maklumkan kedatangan anda sebelum 20 Oktober 2022</h5>
+                        <h5>Sila maklumkan kedatangan anda sebelum <br>20 Oktober 2022</h5>
                     </div>
                 </div>
                 
@@ -115,7 +115,78 @@
                 </div>
             </div>
             <div class="popup-body">
-                <!-- @partial("./components/bahasa/rsvpForm.html") -->
+                <form id="rsvpForm">
+                    <div class="form-row">
+                        <label>Nama*</label>
+                        <span><input type="text" name="name" class="name" required placeholder=""></span>
+                    </div>
+                    <div class="form-row">
+                        <label>Nombor Telefon*</label>
+                        <span><input type="text" name="phone" class="phone" required placeholder=""></span>
+                    </div>
+                    <div class="form-row">
+                        <label>Saya Akan*</label>
+                        <div class="select-wrapper">
+                            <select id="status" class="status" name="status" >
+                                <option value="">Sila Pilih</option>
+                                <option value="attending">Hadir</option>
+                                <option value="not-attending">Tidak Hadir</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row two-col hide-this controlled">
+                        <div class="partners-wrapper" id="partners">
+                            <label>Bilangan*</label>
+                            <div class="select-wrapper">
+                                <select name="pax" class="pax">
+                                    <option value="">Please Select</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="children-wrapper" id="children">
+                            <label>Kanak-kanak*</label>
+                            <span class="select-wrapper">
+                                <select name="children" class="children">
+                                    <option value="">Please Select</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label>Tetamu Kepada</label>
+                        <div class="select-wrapper">
+                            <select id="guest" class="guest" name="guest" required>
+                                <option value="">Sila Pilih</option>
+                                <option value="Zainuddin">Zainuddin</option>
+                                <option value="Shahnaz">Shahnaz</option>
+                                <option value="Haikal">Haikal</option>
+                                <option value="Moh'd Rafi'">Moh'd Rafi'</option>
+                                <option value="Juhariah">Juhariah</option>
+                                <option value="Hanna">Hanna</option>
+                                <option value="Hanis">Hanis</option>
+                                <option value="Hazwan">Hazwan</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label>Komen/Ucapan</label>
+                        <span><textarea name="message" class="message"></textarea></span>
+                    </div>
+                    <div class="form-row submit">
+                        <p><input type="submit" value="Submit" class="submit-btn" ></span></p>
+                    </div>
+                </form>
                 <div class="loader-overlay">
                     <div class="loader"></div>
                 </div>
