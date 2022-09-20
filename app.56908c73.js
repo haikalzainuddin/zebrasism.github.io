@@ -51799,6 +51799,10 @@ var firestore = (0, _firestore.getFirestore)();
 var guestsList = (0, _firestore.doc)(firestore, 'guests/igvIbV8o4QkfVNu6pTVf');
 $(function () {
   $(document).ready(function () {
+    if (window.location.href == "https://invyte.digital") {
+      window.location = "https://invyte.digital/HaikalHanna";
+    }
+
     showPartners();
     popupLinks();
     pageLoad();
@@ -51809,13 +51813,15 @@ $(function () {
     }
 
     if ($('.guests_page').length) {
-      // let pass = prompt("Enter Password")
-      // if (pass == "sub@ng_PJ2022") {
-      getGuestList();
-      guestsSort();
-      dropDown(); // } else {
-      //     window.location = "/"
-      // }
+      var pass = prompt("Enter Password");
+
+      if (pass == "sub@ng_PJ2022") {
+        getGuestList();
+        guestsSort();
+        dropDown();
+      } else {
+        window.location = "/HaikalHanna";
+      }
     }
   });
   $('#rsvpForm').submit(function (e) {
@@ -52194,7 +52200,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61018" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59321" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
