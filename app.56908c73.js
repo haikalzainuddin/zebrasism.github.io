@@ -51812,7 +51812,8 @@ $(function () {
       // let pass = prompt("Enter Password")
       // if (pass == "sub@ng_PJ2022") {
       getGuestList();
-      guestsSort(); // } else {
+      guestsSort();
+      dropDown(); // } else {
       //     window.location = "/"
       // }
     }
@@ -52007,7 +52008,7 @@ $(function () {
                   }
                 }
 
-                guestList.append("<div class=\"row row-data\">\n                    <span>".concat(data.name, "</span>\n                    <span>").concat(data.phone, "</span>\n                    <span class=\"status\">").concat(data.status.replace('-', ' '), "</span>\n                    <span>").concat(status_pax, "</span>\n                    <span>").concat(status_children, "</span>\n                    <span class=\"guest_of\">").concat(data.guest_of, "</span>\n                    <span>").concat(data.message, "</span>\n                </div>"));
+                guestList.append("<div class=\"row row-data\">\n                    <span>".concat(data.name, "</span>\n                    <span>").concat(data.phone, "</span>\n                    <span class=\"status\">").concat(data.status.replace('-', ' '), "</span>\n                    <span class=\"individual_amount\">").concat(status_pax, "</span>\n                    <span class=\"individual_children\">").concat(status_children, "</span>\n                    <span class=\"guest_of\">").concat(data.guest_of, "</span>\n                    <span>").concat(data.message, "</span>\n                </div>"));
               });
               calcPax(status, pax, children); // end - append list to page
 
@@ -52066,24 +52067,53 @@ $(function () {
     return _calcPax.apply(this, arguments);
   }
 
+  function dropDown() {
+    var dropdown = $('.dropdown');
+    dropdown.each(function () {
+      var _this = $(this);
+
+      var dd_btn = _this.find('.dropdown-btn');
+
+      var dd_box = _this.find('.dropdown-box');
+
+      dd_btn.click(function (e) {
+        e.preventDefault();
+        dd_box.toggleClass('show-this');
+      });
+    });
+  }
+
   function guestsSort() {
     var sortStatus = $('.sort-status a');
     var sortGuestOf = $('.sort-guestof a');
     sortStatus.on('click', function (e) {
       var data_row = $('.guests-list .row-data');
       e.preventDefault();
+      $('.total_individual').hide();
 
       var _this = $(this);
 
       var stat = _this.data().status.replace('-', ' ');
 
-      data_row.each(function () {
-        $(this).show();
+      _this.parent().parent().siblings().find('.dropdown-btn span').text("All");
 
-        if ($(this).find('.status').text() != stat) {
-          $(this).hide();
-        }
-      });
+      _this.parent().removeClass('show-this');
+
+      _this.parent().parent().find('.dropdown-btn span').text(_this.text());
+
+      if (stat == "All") {
+        data_row.each(function () {
+          $(this).show();
+        });
+      } else {
+        data_row.each(function () {
+          $(this).show();
+
+          if ($(this).find('.status').text() != stat) {
+            $(this).hide();
+          }
+        });
+      }
     });
     sortGuestOf.on('click', function (e) {
       var data_row = $('.guests-list .row-data');
@@ -52093,18 +52123,45 @@ $(function () {
 
       var guestof = _this.data().guestof;
 
+      var individual = $('.total_individual');
+      var amount = 0;
+      var children = 0;
+
+      _this.parent().parent().siblings().find('.dropdown-btn span').text("All");
+
+      _this.parent().removeClass('show-this');
+
+      _this.parent().parent().find('.dropdown-btn span').text(_this.text());
+
       if (guestof == "All") {
         data_row.each(function () {
           $(this).show();
         });
+        individual.hide();
       } else {
         data_row.each(function () {
           $(this).show();
 
           if ($(this).find('.guest_of').text() != guestof) {
             $(this).hide();
+          } else {
+            if ($(this).find('.individual_amount').text() != "-") {
+              amount = amount + parseInt($(this).find('.individual_amount').text());
+            } else {
+              amount = amount + 0;
+            }
+
+            if ($(this).find('.individual_children').text() != "-") {
+              children = children + parseInt($(this).find('.individual_children').text());
+            } else {
+              children = children + 0;
+            }
           }
         });
+        individual.show();
+        individual.find('.pax_name').text(guestof);
+        individual.find('.pax_amount').text(amount);
+        individual.find('.pax_child').text(children);
       }
     });
   }
@@ -52137,7 +52194,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64593" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57933" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

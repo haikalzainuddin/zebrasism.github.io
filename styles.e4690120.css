@@ -490,6 +490,54 @@ form.hide-this {
   opacity: 0;
   visibility: hidden;
 }
+.guests_page_filters {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 15px 0;
+}
+.guests_page_filters_wrapper {
+  display: flex;
+  margin-top: 10px;
+}
+.guests_page_filters_wrapper > span {
+  padding: 0 15px;
+}
+
+.dropdown {
+  position: relative;
+}
+.dropdown-btn {
+  padding: 0 10px;
+  border-bottom: 1px solid #8f5c55;
+  color: #000;
+}
+.dropdown-btn .fa {
+  margin-left: 5px;
+}
+.dropdown-box {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  background: #8f5c55;
+}
+.dropdown-box > a {
+  padding: 5px 10px;
+  color: #fff;
+}
+.dropdown-box.show-this {
+  opacity: 1;
+  visibility: visible;
+  height: initial;
+}
+
+.total_individual {
+  display: none;
+  text-align: center;
+}
 
 @media only screen and (max-width: 1024px) {
   .invite-title {
