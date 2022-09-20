@@ -36,7 +36,7 @@ const guestsList = doc(firestore, 'guests/igvIbV8o4QkfVNu6pTVf')
 $(function(){
 
     $(document).ready(function(){
-        if (window.location.href == "https://invyte.digital") {
+        if (window.location.href == "https://invyte.digital/") {
             window.location = "https://invyte.digital/HaikalHanna"
         }
         showPartners()
