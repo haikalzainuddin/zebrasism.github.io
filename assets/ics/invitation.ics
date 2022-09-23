@@ -1,0 +1,10 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+DTSTART:20221105T030000Z
+DTEND:20221105T070000Z
+SUMMARY:Wedding Invitation | Haikal & Hanna
+DESCRIPTION:For more information, please visit https://invyte.digital/HaikalHanna
+LOCATION:GlamHall Damansara
+END:VEVENT
+END:VCALENDAR

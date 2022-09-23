@@ -440,7 +440,7 @@ form.hide-this {
   color: #fff;
   text-align: center;
 }
-.btn .fa, .btn .fab {
+.btn .fa, .btn .fab, .btn .fa-brands {
   margin-right: 5px;
 }
 .btn-wrapper {
