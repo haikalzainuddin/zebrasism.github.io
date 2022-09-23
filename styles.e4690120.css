@@ -183,9 +183,11 @@ h1, h2, h3, h4, h5, p {
   text-align: center;
   background: #652f30;
   color: #fff;
-  padding: 15px;
   font-size: 14px;
   transition: 0.3s all;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .invite-links > a:hover {
   background: #8f5c55;
@@ -433,7 +435,6 @@ form.hide-this {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
-  background: grey;
   margin-left: 10px;
   background: #652f30;
   color: #fff;
@@ -445,6 +446,11 @@ form.hide-this {
 .btn-wrapper {
   display: flex;
   margin: 10px 0 0 -10px;
+}
+.btn-print {
+  padding: 10px 20px;
+  display: inline-block;
+  width: initial;
 }
 
 .contact-list > div {
@@ -497,10 +503,14 @@ form.hide-this {
 }
 .guests_page_filters_wrapper {
   display: flex;
+  align-items: center;
   margin-top: 10px;
 }
 .guests_page_filters_wrapper > span {
   padding: 0 15px;
+}
+.guests_page_print {
+  margin-left: auto;
 }
 
 .dropdown {
@@ -523,6 +533,7 @@ form.hide-this {
   position: absolute;
   width: 100%;
   background: #8f5c55;
+  z-index: 10;
 }
 .dropdown-box > a {
   padding: 5px 10px;
@@ -537,6 +548,17 @@ form.hide-this {
 .total_individual {
   display: none;
   text-align: center;
+}
+
+.calendar-add {
+  margin-top: 15px;
+}
+.calendar-btns {
+  display: flex;
+  margin: 10px 0 0 -10px;
+}
+.calendar-img img {
+  width: 100%;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -612,6 +634,25 @@ form.hide-this {
   }
   .popup-body::-webkit-scrollbar-thumb:hover {
     background: #555;
+  }
+  .guests_page_filters_wrapper {
+    flex-wrap: wrap;
+  }
+  .guests_page_filters_wrapper .dropdown {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .guests_page_filters_wrapper > span {
+    display: none;
+  }
+  .calendar-btns {
+    flex-wrap: wrap;
+  }
+  .calendar-btns > a {
+    margin-bottom: 10px;
+  }
+  .calendar-btns > a:last-of-type {
+    margin-bottom: 0;
   }
 }
 

@@ -51805,23 +51805,21 @@ $(function () {
 
     showPartners();
     popupLinks();
-    pageLoad();
-    console.log(undefined);
+    pageLoad(); // console.log(process.env.S3_BUCKET) 
 
     if ($('.invite-links').length) {
       stickyNav();
     }
 
     if ($('.guests_page').length) {
-      var pass = prompt("Enter Password");
-
-      if (pass == "sub@ng_PJ2022") {
-        getGuestList();
-        guestsSort();
-        dropDown();
-      } else {
-        window.location = "/HaikalHanna";
-      }
+      // let pass = prompt("Enter Password")
+      // if (pass == "sub@ng_PJ2022") {
+      getGuestList();
+      guestsSort();
+      dropDown();
+      printBtn(); // } else {
+      //     window.location = "/HaikalHanna"
+      // }
     }
   });
   $('#rsvpForm').submit(function (e) {
@@ -52171,6 +52169,14 @@ $(function () {
       }
     });
   }
+
+  function printBtn() {
+    var print = $('.guests_page_print a');
+    print.on('click', function (e) {
+      e.preventDefault();
+      window.print();
+    });
+  }
 });
 },{"jquery":"../node_modules/jquery/dist/jquery.js","dotenv":"../node_modules/dotenv/lib/main.js","firebase/app":"../node_modules/firebase/app/dist/index.esm.js","firebase/firestore":"../node_modules/firebase/firestore/dist/index.esm.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -52200,7 +52206,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59774" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62267" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
