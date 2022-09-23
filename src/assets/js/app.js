@@ -42,19 +42,20 @@ $(function(){
         showPartners()
         popupLinks();
         pageLoad();
-        console.log(process.env.S3_BUCKET) 
+        // console.log(process.env.S3_BUCKET) 
         if ($('.invite-links').length) {
             stickyNav();
         }
         if ($('.guests_page').length) {
-            let pass = prompt("Enter Password")
-            if (pass == "sub@ng_PJ2022") {
+            // let pass = prompt("Enter Password")
+            // if (pass == "sub@ng_PJ2022") {
                 getGuestList()
                 guestsSort()
                 dropDown()
-            } else {
-                window.location = "/HaikalHanna"
-            }
+                printBtn();
+            // } else {
+            //     window.location = "/HaikalHanna"
+            // }
         }
     })
 
@@ -348,6 +349,15 @@ $(function(){
                 individual.find('.pax_amount').text(amount)
                 individual.find('.pax_child').text(children)
             }
+        })
+    }
+
+    function printBtn() {
+        let print = $('.guests_page_print a')
+
+        print.on('click', function(e){
+            e.preventDefault();
+            window.print();
         })
     }
 })

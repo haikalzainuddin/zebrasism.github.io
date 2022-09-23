@@ -189,9 +189,11 @@ h1, h2, h3, h4, h5, p {
             text-align: center;
             background: $third-color;
             color: #fff;
-            padding: 15px;
             font-size: 14px;
             transition: 0.3s all;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             &:hover {
                 background: $first-color;
             }
@@ -438,7 +440,6 @@ form {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    background: grey;
     margin-left: 10px;
     background: $third-color;
     color: #fff;
@@ -449,6 +450,11 @@ form {
     &-wrapper {
         display: flex;
         margin: 10px 0 0 -10px;
+    }
+    &-print {
+        padding: 10px 20px;
+        display: inline-block;
+        width: initial;
     }
 }
 
@@ -506,11 +512,15 @@ form {
         padding: 15px 15px 0;
         &_wrapper {
             display: flex;
+            align-items: center;
             margin-top: 10px;
             > span {
                 padding: 0 15px;
             }
         }
+    }
+    &_print {
+        margin-left: auto;
     }
 }
 
@@ -533,6 +543,7 @@ form {
         position: absolute;
         width: 100%;
         background: $first-color;
+        z-index: 10;
         > a {
             padding: 5px 10px;
             color: #fff;
@@ -548,6 +559,16 @@ form {
 .total_individual {
     display: none;
     text-align: center;
+}
+
+.calendar {
+    &-add {
+        margin-top: 15px;
+    }
+    &-btns {
+        display: flex;
+        margin: 5px 0 0 -10px;
+    }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -637,6 +658,27 @@ form {
             /* Handle on hover */
             &::-webkit-scrollbar-thumb:hover {
                 background: #555;
+            }
+        }
+    }
+    .guests_page_filters_wrapper {
+        flex-wrap: wrap;
+        .dropdown {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        > span {
+            display: none;
+        }
+    }
+    .calendar {
+        &-btns {
+            flex-wrap: wrap;
+            > a {
+                margin-bottom: 10px;
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
             }
         }
     }
