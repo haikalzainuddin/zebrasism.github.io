@@ -255,6 +255,7 @@ form select, form option {
 }
 form .select-wrapper {
   position: relative;
+  display: block;
 }
 form .select-wrapper:after {
   content: "▼";
@@ -654,6 +655,9 @@ form.hide-this {
   }
   .calendar-btns > a:last-of-type {
     margin-bottom: 0;
+  }
+  form .form-row.two-col label {
+    font-size: 12px;
   }
 }
 
