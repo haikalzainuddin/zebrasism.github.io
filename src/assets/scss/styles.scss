@@ -262,6 +262,7 @@ form {
     }
     .select-wrapper {
         position: relative;
+        display: block;
         &:after {
             content: '\0025BC';
             font: normal normal normal 12px/1 FontAwesome;
@@ -682,6 +683,15 @@ form {
                 margin-bottom: 10px;
                 &:last-of-type {
                     margin-bottom: 0;
+                }
+            }
+        }
+    }
+    form {
+        .form-row {
+            &.two-col {
+                label {
+                    font-size: 12px;
                 }
             }
         }
