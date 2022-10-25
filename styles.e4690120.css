@@ -114,6 +114,9 @@ h1, h2, h3, h4, h5, p {
   z-index: 1;
   position: relative;
 }
+.invite-card .content.rsvp-date {
+  display: none;
+}
 .invite-card .content p {
   margin: 0 0 20px;
 }
