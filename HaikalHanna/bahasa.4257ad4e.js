@@ -559,7 +559,7 @@ const firebaseConfig = {
 const app = (0, _app.initializeApp)(firebaseConfig);
 const db = (0, _firestore.getFirestore)(app);
 const firestore = (0, _firestore.getFirestore)();
-const guestsList = (0, _firestore.doc)(firestore, "guests/igvIbV8o4QkfVNu6pTVf");
+const guestsList = (0, _firestore.doc)(firestore, "guestsHazwan/igvIbV8o4QkfVNu6pTVf");
 $(function() {
     $(document).ready(function() {
         if (window.location.href == "https://invyte.digital/") window.location = "https://invyte.digital/HazwanLaila";
@@ -663,7 +663,7 @@ $(function() {
             message: $(".message").val()
         };
         try {
-            await (0, _firestore.setDoc)((0, _firestore.doc)(db, "guests", $(".name").val()), guestData);
+            await (0, _firestore.setDoc)((0, _firestore.doc)(db, "guestsHazwan", $(".name").val()), guestData);
             form.addClass("fade-this");
             loader.addClass("show-this");
             setTimeout(function() {
@@ -680,7 +680,7 @@ $(function() {
         let status = [];
         let children = [];
         // get guests list
-        const getGuestList1 = (0, _firestore.query)((0, _firestore.collection)(firestore, "guests"));
+        const getGuestList1 = (0, _firestore.query)((0, _firestore.collection)(firestore, "guestsHazwan"));
         $(".guests_page").removeClass("hide-page");
         const querySnapshot = await (0, _firestore.getDocs)(getGuestList1);
         // end - get guests list

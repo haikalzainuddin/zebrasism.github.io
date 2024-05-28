@@ -1,4 +1,34 @@
-@partial("./partials/head.html")
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="/favicon.ee9adb65.png">
+
+        <script src="https://kit.fontawesome.com/f6dc722695.js" crossorigin="anonymous"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="/guests.820f576f.css">
+        <title>Haikal & Hanna - Wedding Invitation</title>
+        <meta content="Haikal & Hanna - Wedding Invitation" property="og:title">
+        <meta content="https://invyte.digital/og-image.04fd90ac.jpg" property="og:image">
+        <meta content="GlamHall Damansara, 5th November 2022" property="og:description">
+        <meta property="og:type" content="website">
+    </head>
+
+<body class="hide-this">
+
+    <div class="page">
+
+        <div class="page-loader">
+            <div class="loader"></div>
+        </div>
     
     <div class="invite-page hide-this">
         <div class="invite-container">
@@ -9,10 +39,10 @@
                 <div class="invite-front">
                     <div class="invite-title">
                         <h3>Wedding Invitation</h3>
-                        <h1>Haikal<span>&</span>Hanna</h1>
+                        <h1>Hazwan<span>&</span>Laila</h1>
                         <div class="invite-title-details">
-                            <h3>5th November 2022</h3>
-                            <h3>Glamhall, Damansara</h3>
+                            <h3>13th July 2024</h3>
+                            <h3>Magica Tropicana Aman Hall</h3>
                         </div>
                     </div>
                 </div>
@@ -52,8 +82,7 @@
                             Magica Tropicana Aman Hall<br>
                             2, Persiaran Tropicana Aman 1,<br>
                             Bandar Tropicana Aman,<br>
-                            42500 Telok Panglima Garang<br>
-                            47820 Petaling Jaya
+                            42500 Telok Panglima Garang
                         </p>
     
                         <h5>Time</h5>
@@ -89,7 +118,75 @@
                 </div>
             </div>
             <div class="popup-body">
-                @partial("./components/rsvpForm.html")
+                <form id="rsvpForm">
+                    <div class="form-row">
+                        <label>Name*</label>
+                        <span><input type="text" name="name" class="name" required=""></span>
+                    </div>
+                    <div class="form-row">
+                        <label>Phone*</label>
+                        <span><input type="text" name="phone" class="phone" required=""></span>
+                    </div>
+                    <div class="form-row">
+                        <label>I will be*</label>
+                        <div class="select-wrapper">
+                            <select id="status" class="status" name="status" required="">
+                                <option value="">Please Select</option>
+                                <option value="attending">Attending</option>
+                                <option value="not-attending">Not attending</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row two-col hide-this controlled">
+                        <div class="partners-wrapper" id="partners">
+                            <label>Adults*</label>
+                            <div class="select-wrapper">
+                                <select name="pax" class="pax">
+                                    <option value="">Please Select</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="children-wrapper" id="children">
+                            <label>Children*</label>
+                            <div class="select-wrapper">
+                                <select name="children" class="children">
+                                    <option value="">Please Select</option>
+                                    <option value="0">0</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label>Guest Of*</label>
+                        <div class="select-wrapper">
+                            <select id="guest" class="guest" name="guest" required="">
+                                <option value="">Please Select</option>
+                                <option value="Moh'd Rafi'">Moh'd Rafi'</option>
+                                <option value="Juhariah">Juhariah</option>
+                                <option value="Hanna">Hanna</option>
+                                <option value="Hanis">Hanis</option>
+                                <option value="Hazwan">Hazwan</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <label>Comments/Wishes</label>
+                        <span><textarea name="message" class="message"></textarea></span>
+                    </div>
+                    <div class="form-row submit">
+                        <p><input type="submit" value="Submit" class="submit-btn"></p>
+                    </div>
+                </form>
                 <div class="loader-overlay">
                     <div class="loader"></div>
                 </div>
@@ -109,10 +206,10 @@
                     <i class="fa fa-times"></i>
                 </div>
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.733844762961!2d101.61146401475736!3d3.1646657976957124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4f331ef4c0bf%3A0x2017216343109cb3!2sGLAMHALL%20DAMANSARA!5e0!3m2!1sen!2smy!4v1661272218395!5m2!1sen!2smy" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3984.5508163073323!2d101.5299060767621!3d2.944498254372858!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cdb1952bb7cabf%3A0x3e239ad7c22486b!2sMagica%20Tropicana%20Aman%20Hall%20(1484663-A)!5e0!3m2!1sen!2smy!4v1716889969372!5m2!1sen!2smy" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div class="btn-wrapper">
-                <a href="https://ul.waze.com/ul?place=ChIJv8D0HjNPzDERs5wQQ2MhFyA&ll=3.16466580%2C101.61365270&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" class="btn" target="_blank"><i class="fab fa-waze"></i> Waze</a>
-                <a href="https://www.google.com/maps/place/GLAMHALL+DAMANSARA/@3.1646658,101.6136527,17z/data=!3m1!4b1!4m5!3m4!1s0x31cc4f331ef4c0bf:0x2017216343109cb3!8m2!3d3.1646658!4d101.6136527" class="btn" target="_blank"><i class="fa fa-google"></i> Google Maps</a>
+                <a href="https://ul.waze.com/ul?place=ChIJv8q3K5WxzTERa0gifK054gM&ll=2.94449290%2C101.53248100&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" class="btn" target="_blank"><i class="fab fa-waze"></i> Waze</a>
+                <a href="https://maps.app.goo.gl/T7LDT3xD3vnUZmB98" class="btn" target="_blank"><i class="fa fa-google"></i> Google Maps</a>
             </div>
         </div>
     </div>
@@ -151,33 +248,6 @@
             <div class="contact-list">
                 <div>
                     <div class="contact-details">
-                        Zainuddin
-                    </div>
-                    <div class="contact-numbers">
-                        <a href="tel:0176669063"><i class="fa fa-phone"></i> <span>Call</span></a>
-                        <a href="https://wa.me/+60176669063" target="_blank"><i class="fa fa-whatsapp"></i> <span>Whatsapp</span></a>
-                    </div>
-                </div>
-                <div>
-                    <div class="contact-details">
-                        Shahnaz
-                    </div>
-                    <div class="contact-numbers">
-                        <a href="tel:0123443378"><i class="fa fa-phone"></i> <span>Call</span></a>
-                        <a href="https://wa.me/+60123443378" target="_blank"><i class="fa fa-whatsapp"></i> <span>Whatsapp</span></a>
-                    </div>
-                </div>
-                <div>
-                    <div class="contact-details">
-                        Nadia
-                    </div>
-                    <div class="contact-numbers">
-                        <a href="tel:0173087044"><i class="fa fa-phone"></i> <span>Call</span></a>
-                        <a href="https://wa.me/+60173080744" target="_blank"><i class="fa fa-whatsapp"></i> <span>Whatsapp</span></a>
-                    </div>
-                </div>
-                <div>
-                    <div class="contact-details">
                         Moh'd Rafi'
                     </div>
                     <div class="contact-numbers">
@@ -196,15 +266,18 @@
                 </div>
                 <div>
                     <div class="contact-details">
-                        Hazwan
+                        Hanna
                     </div>
                     <div class="contact-numbers">
-                        <a href="tel:01157770275"><i class="fa fa-phone"></i> <span>Call</span></a>
-                        <a href="https://wa.me/+601157770275" target="_blank"><i class="fa fa-whatsapp"></i> <span>Whatsapp</span></a>
+                        <a href="tel:60127723708"><i class="fa fa-phone"></i> <span>Call</span></a>
+                        <a href="https://wa.me/+60127723708" target="_blank"><i class="fa fa-whatsapp"></i> <span>Whatsapp</span></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-@partial("./partials/footer.html")<script src="/HazwanLaila.986dde90.js"></script>
+</div>
+<script src="/guests.4257ad4e.js" defer=""></script>
+</body>
+</html>
