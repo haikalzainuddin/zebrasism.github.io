@@ -70,7 +70,7 @@ h1, h2, h3, h4, h5, p {
 }
 
 .invite-card.front {
-  background: #fff url("bunga-new.1c12fb47.png") -70px -130px / 630px no-repeat;
+  background: #fff url("../bunga-new.1c12fb47.png") -70px -130px / 630px no-repeat;
   margin-bottom: 25px;
   position: relative;
 }
@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, p {
   width: 100%;
   content: "";
   opacity: 1;
-  background: url("bunga3.3a7d38f2.png") 50px -60px / 500px no-repeat;
+  background: url("../bunga3.3a7d38f2.png") 50px -60px / 500px no-repeat;
   position: absolute;
   top: 0;
   left: 0;
@@ -104,7 +104,7 @@ h1, h2, h3, h4, h5, p {
   width: 100%;
   content: "";
   opacity: .5;
-  background: url("bunga-2-new.104296e5.png") -225px -70px / 800px no-repeat;
+  background: url("../bunga-2-new.104296e5.png") -225px -70px / 800px no-repeat;
   position: absolute;
   top: 0;
   left: 0;
@@ -751,4 +751,4 @@ form.hide-this, .form-submit-message {
   }
 }
 
-/*# sourceMappingURL=guests.820f576f.css.map */
+/*# sourceMappingURL=head.820f576f.css.map */
