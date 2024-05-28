@@ -1,34 +1,4 @@
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-        <link rel="icon" type="image/x-icon" href="/favicon.4a53ba07.png">
-
-        <script src="https://kit.fontawesome.com/f6dc722695.js" crossorigin="anonymous"></script>
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="/styles.e4690120.css">
-        <title>Haikal & Hanna - Wedding Invitation</title>
-        <meta content="Haikal & Hanna - Wedding Invitation" property="og:title">
-        <meta content="https://invyte.digital/og-image.04fd90ac.jpg" property="og:image">
-        <meta content="GlamHall Damansara, 5th November 2022" property="og:description">
-        <meta property="og:type" content="website">
-    </head>
-
-<body class="hide-this">
-
-    <div class="page">
-
-        <div class="page-loader">
-            <div class="loader"></div>
-        </div>
+@partial("./partials/head.html")
     
     <div class="invite-page hide-this">
         <div class="invite-container">
@@ -119,78 +89,7 @@
                 </div>
             </div>
             <div class="popup-body">
-                <form id="rsvpForm">
-    <div class="form-row">
-        <label>Name*</label>
-        <span><input type="text" name="name" class="name" required=""></span>
-    </div>
-    <div class="form-row">
-        <label>Phone*</label>
-        <span><input type="text" name="phone" class="phone" required=""></span>
-    </div>
-    <div class="form-row">
-        <label>I will be*</label>
-        <div class="select-wrapper">
-            <select id="status" class="status" name="status" required="">
-                <option value="">Please Select</option>
-                <option value="attending">Attending</option>
-                <option value="not-attending">Not attending</option>
-            </select>
-        </div>
-    </div>
-    <div class="form-row two-col hide-this controlled">
-        <div class="partners-wrapper" id="partners">
-            <label>Adults*</label>
-            <div class="select-wrapper">
-                <select name="pax" class="pax">
-                    <option value="">Please Select</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </div>
-        </div>
-        <div class="children-wrapper" id="children">
-            <label>Children*</label>
-            <div class="select-wrapper">
-                <select name="children" class="children">
-                    <option value="">Please Select</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </div>
-        </div>
-    </div>
-    <div class="form-row">
-        <label>Guest Of*</label>
-        <div class="select-wrapper">
-            <select id="guest" class="guest" name="guest" required="">
-                <option value="">Please Select</option>
-                <option value="Zainuddin">Zainuddin</option>
-                <option value="Shahnaz">Shahnaz</option>
-                <option value="Haikal">Haikal</option>
-                <option value="Moh'd Rafi'">Moh'd Rafi'</option>
-                <option value="Juhariah">Juhariah</option>
-                <option value="Hanna">Hanna</option>
-                <option value="Hanis">Hanis</option>
-                <option value="Hazwan">Hazwan</option>
-            </select>
-        </div>
-    </div>
-    <div class="form-row">
-        <label>Comments/Wishes</label>
-        <span><textarea name="message" class="message"></textarea></span>
-    </div>
-    <div class="form-row submit">
-        <p><input type="submit" value="Submit" class="submit-btn"></p>
-    </div>
-</form>
+                @partial("./components/rsvpForm.html")
                 <div class="loader-overlay">
                     <div class="loader"></div>
                 </div>
@@ -210,7 +109,7 @@
                     <i class="fa fa-times"></i>
                 </div>
             </div>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.733844762961!2d101.61146401475736!3d3.1646657976957124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4f331ef4c0bf%3A0x2017216343109cb3!2sGLAMHALL%20DAMANSARA!5e0!3m2!1sen!2smy!4v1661272218395!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.733844762961!2d101.61146401475736!3d3.1646657976957124!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc4f331ef4c0bf%3A0x2017216343109cb3!2sGLAMHALL%20DAMANSARA!5e0!3m2!1sen!2smy!4v1661272218395!5m2!1sen!2smy" width="600" height="450" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div class="btn-wrapper">
                 <a href="https://ul.waze.com/ul?place=ChIJv8D0HjNPzDERs5wQQ2MhFyA&ll=3.16466580%2C101.61365270&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" class="btn" target="_blank"><i class="fab fa-waze"></i> Waze</a>
                 <a href="https://www.google.com/maps/place/GLAMHALL+DAMANSARA/@3.1646658,101.6136527,17z/data=!3m1!4b1!4m5!3m4!1s0x31cc4f331ef4c0bf:0x2017216343109cb3!8m2!3d3.1646658!4d101.6136527" class="btn" target="_blank"><i class="fa fa-google"></i> Google Maps</a>
@@ -227,14 +126,14 @@
                 </div>
             </div>
             <div class="calendar-img">
-                <img src="/calendar-final.c1110b79.jpg">
+                <img src="/calendar-final.d57744e7.jpg">
             </div>
             <div class="calendar-add">
                 <div>Add To Calendar:</div>
                 <div class="calendar-btns">
                     <a class="btn" target="_blank" href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20221105T030000Z%2F20221105T070000Z&details=For%20more%20information%2C%20please%20visit%20https%3A%2F%2Finvyte.digital%2FHaikalHanna&location=GlamHall%20Damansara&text=Wedding%20Invitation%20%7C%20Haikal%20%26%20Hanna"><i class="fa fa-google"></i> Google</a>
                     <a class="btn" target="_blank" href="https://outlook.live.com/calendar/0/deeplink/compose?body=For%20more%20information%2C%20please%20visit%20https%3A%2F%2Finvyte.digital%2FHaikalHanna&enddt=2022-11-05T07%3A00%3A00%2B00%3A00&location=GlamHall%20Damansara&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2022-11-05T03%3A00%3A00%2B00%3A00&subject=Wedding%20Invitation%20%7C%20Haikal%20%26%20Hanna"><i class="fa-brands fa-windows"></i> Outlook</a>
-                    <a class="btn" href="/assets\ics\invitation.ics"><i class="fa fa-apple"></i> Apple</a>
+                    <a class="btn" href="/assets/ics/invitation.ics"><i class="fa fa-apple"></i> Apple</a>
                 </div>
             </div>
         </div>
@@ -308,7 +207,4 @@
         </div>
     </div>
 
-    </div>
-    <script src="/app.56908c73.js" defer=""></script>
-</body>
-</html>
+@partial("./partials/footer.html")<script src="/HaikalHanna.bd914e8f.js"></script>
