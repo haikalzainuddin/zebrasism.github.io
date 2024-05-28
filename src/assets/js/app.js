@@ -40,7 +40,7 @@ const db = getFirestore(app);
 
 const firestore = getFirestore();
 
-const guestsList = doc(firestore, "guests/igvIbV8o4QkfVNu6pTVf");
+const guestsList = doc(firestore, "guestsHazwan/igvIbV8o4QkfVNu6pTVf");
 
 $(function () {
   $(document).ready(function () {
@@ -168,7 +168,7 @@ $(function () {
     };
 
     try {
-      await setDoc(doc(db, "guests", $(".name").val()), guestData);
+      await setDoc(doc(db, "guestsHazwan", $(".name").val()), guestData);
 
       form.addClass("fade-this");
       loader.addClass("show-this");
@@ -189,7 +189,7 @@ $(function () {
     let children = [];
 
     // get guests list
-    const getGuestList1 = query(collection(firestore, "guests"));
+    const getGuestList1 = query(collection(firestore, "guestsHazwan"));
 
     $(".guests_page").removeClass("hide-page");
 
