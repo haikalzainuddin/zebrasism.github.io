@@ -1,47 +1,17 @@
-
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-        <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
-
-        <script src="https://kit.fontawesome.com/f6dc722695.js" crossorigin="anonymous"></script>
-
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="./assets/scss/styles.scss" />
-        <title>Haikal & Hanna - Wedding Invitation</title>
-        <meta content="Haikal & Hanna - Wedding Invitation" property="og:title" />
-        <meta content="https://invyte.digital/og-image.04fd90ac.jpg" property="og:image" />
-        <meta content="GlamHall Damansara, 5th November 2022" property="og:description" />
-        <meta property="og:type" content="website" />
-    </head>
-
-<body class="hide-this">
-
-    <div class="page">
-
-        <div class="page-loader">
-            <div class="loader"></div>
-        </div>
+@partial("./partials/head.html")
     
     <div class="invite-page hide-this">
         <div class="invite-container">
             <div class="invite-card front">
                 <div class="invite-lang">
-                    <a href="/bahasa">Bahasa Melayu</a>
+                    <a href="/HaikalHanna/bahasa">Bahasa Melayu</a>
                 </div>
                 <div class="invite-front">
                     <div class="invite-title">
                         <h3>Wedding Invitation</h3>
                         <h1>Haikal<span>&</span>Hanna</h1>
                         <div class="invite-title-details">
-                            <h3>5 November 2022</h3>
+                            <h3>5th November 2022</h3>
                             <h3>Glamhall, Damansara</h3>
                         </div>
                     </div>
@@ -65,38 +35,39 @@
                         <p>Cordially invite Mr/Mdm/Ms to the Wedding Reception of</p>
                     
                         <h3>
-                            Muhammad Haikalss bin Zainuddin
+                            Muhammad Hazwan bin Moh'd Rafi’
                             <span>
                                 &
                             </span>
-                            Nur Hanna binti Moh’d Rafi’
+                            Siti Laila Sobirah binti Jaafar
                         </h3>
                     </div>
     
                     <div class="content">
                         <h5>Date</h5>
-                        <p>Saturday, 5th November 2022</p>
+                        <p>Saturday, 13th July 2024</p>
     
                         <h5>Venue</h5>
                         <p>
-                            GlamHall Damansara<br>
-                            Level 6, Mercu Mustapha Kamal,<br>
-                            Block D, Neo Damansara, Jalan PJU 8/1,<br>
-                            Damansara Perdana,<br>
+                            Magica Tropicana Aman Hall<br>
+                            2, Persiaran Tropicana Aman 1,<br>
+                            Bandar Tropicana Aman,<br>
+                            42500 Telok Panglima Garang<br>
                             47820 Petaling Jaya
                         </p>
     
                         <h5>Time</h5>
-                        <p>11:00 AM - 3:00 PM</p>
+                        <p>11:00 AM - 4:00 PM</p>
                     </div>
     
-                    <div class="content">
-                        <h5>Kindly confirm your attendance by <br>20th of October 2022</h5>
+                    <div class="content rsvp-date">
+                        <h5>Kindly confirm your attendance by <br>19th October 2022</h5>
                     </div>
                 </div>
                 <div class="invite-links-wrapper">
                     <div class="invite-links">
                         <a href="#" class="popup-btn rsvp" data-popup="rsvp">RSVP</a>
+                        <a href="#" class="popup-btn calendar" data-popup="calendar">Calendar</a>
                         <a href="#" class="popup-btn direction" data-popup="direction">Direction</a>
                         <a href="#" class="popup-btn contact" data-popup="contact">Contact</a>
                     </div>
@@ -107,6 +78,7 @@
             </div>
         </div>
     </div>
+    
 
     <div class="popup" data-popup="rsvp">
         <div class="popup-content">
@@ -123,6 +95,7 @@
                 </div>
                 <div class="form-submit-message">
                     Thank you, your response has been recorded. <span>See you there!</span>
+                    
                 </div>
             </div>
         </div>
@@ -140,6 +113,28 @@
             <div class="btn-wrapper">
                 <a href="https://ul.waze.com/ul?place=ChIJv8D0HjNPzDERs5wQQ2MhFyA&ll=3.16466580%2C101.61365270&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" class="btn" target="_blank"><i class="fab fa-waze"></i> Waze</a>
                 <a href="https://www.google.com/maps/place/GLAMHALL+DAMANSARA/@3.1646658,101.6136527,17z/data=!3m1!4b1!4m5!3m4!1s0x31cc4f331ef4c0bf:0x2017216343109cb3!8m2!3d3.1646658!4d101.6136527" class="btn" target="_blank"><i class="fa fa-google"></i> Google Maps</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup" data-popup="calendar">
+        <div class="popup-content">
+            <div class="popup-header">
+                <h2>Calendar</h2>
+                <div class="popup-close">
+                    <i class="fa fa-times"></i>
+                </div>
+            </div>
+            <div class="calendar-img">
+                <img src="./assets/images/calendar-final.jpg">
+            </div>
+            <div class="calendar-add">
+                <div>Add To Calendar:</div>
+                <div class="calendar-btns">
+                    <a class="btn" target="_blank" href="https://calendar.google.com/calendar/render?action=TEMPLATE&dates=20221105T030000Z%2F20221105T070000Z&details=For%20more%20information%2C%20please%20visit%20https%3A%2F%2Finvyte.digital%2FHaikalHanna&location=GlamHall%20Damansara&text=Wedding%20Invitation%20%7C%20Haikal%20%26%20Hanna"><i class="fa fa-google"></i> Google</a>
+                    <a class="btn" target="_blank" href="https://outlook.live.com/calendar/0/deeplink/compose?body=For%20more%20information%2C%20please%20visit%20https%3A%2F%2Finvyte.digital%2FHaikalHanna&enddt=2022-11-05T07%3A00%3A00%2B00%3A00&location=GlamHall%20Damansara&path=%2Fcalendar%2Faction%2Fcompose&rru=addevent&startdt=2022-11-05T03%3A00%3A00%2B00%3A00&subject=Wedding%20Invitation%20%7C%20Haikal%20%26%20Hanna"><i class="fa-brands fa-windows"></i> Outlook</a>
+                    <a class="btn" href="./assets/ics/invitation.ics"><i class="fa fa-apple"></i> Apple</a>
+                </div>
             </div>
         </div>
     </div>
@@ -212,7 +207,4 @@
         </div>
     </div>
 
-</div>
-<script src="./assets/js/app.js" defer type="module"></script>
-</body>
-</html>
+@partial("./partials/footer.html")

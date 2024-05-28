@@ -1,4 +1,34 @@
-@partial("./partials/head.html")
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
+
+        <script src="https://kit.fontawesome.com/f6dc722695.js" crossorigin="anonymous"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/scss/styles.scss" />
+        <title>Haikal & Hanna - Wedding Invitation</title>
+        <meta content="Haikal & Hanna - Wedding Invitation" property="og:title" />
+        <meta content="https://invyte.digital/og-image.04fd90ac.jpg" property="og:image" />
+        <meta content="GlamHall Damansara, 5th November 2022" property="og:description" />
+        <meta property="og:type" content="website" />
+    </head>
+
+<body class="hide-this">
+
+    <div class="page">
+
+        <div class="page-loader">
+            <div class="loader"></div>
+        </div>
 
     <div class="guests_page hide-page">
         <div class="guests_page_filters">
@@ -34,13 +64,37 @@
                 </div>
             </div>
         </div>
-        @partial("./components/totalPax.html")
+        <section class="totalpax">
+            <div>
+                Total Adults
+                <span class="totalpax-amount"></span>
+            </div>
+            <div>
+                Total Children
+                <span class="totalchildren-amount"></span>
+            </div>
+        </section>
 
         <div class="total_individual hide-this">Total guests for <span class="pax_name"></span>: <span class="pax_amount"></span> Adults | <span class="pax_child"></span> Children</div>
 
-        @partial("./components/guestsList.html")
+        <section class="guests-list" id="guests-list">
+            <div class="guests-list-wrapper">
+                <div class="row row-title">
+                    <span>Name</span>
+                    <span>Phone</span>
+                    <span>Status</span>
+                    <span>Pax</span>
+                    <span>Children</span>
+                    <span>Guest Of</span>
+                    <span>Message</span>
+                </div>
+            </div>
+        </section>
 
     </div>
 
 
-@partial("./partials/footer.html")
+</div>
+<script src="./assets/js/app.js" defer type="module"></script>
+</body>
+</html>
