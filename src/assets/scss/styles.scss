@@ -75,7 +75,7 @@ p {
     margin: 0 auto;
     position: relative;
     &.front {
-      background: url("../images/bunga-new.png");
+      background: url("../images/kerawang_4a.png");
       background-size: 630px;
       background-position: -70px -130px;
       background-repeat: no-repeat;
@@ -94,6 +94,7 @@ p {
         background-repeat: no-repeat;
         background-size: 500px;
         background-position: 50px -60px;
+        opacity: 0;
       }
     }
     &.back {
@@ -114,7 +115,7 @@ p {
         width: 100%;
         content: "";
         opacity: 0.5;
-        background: url("../images/bunga-2-new.png");
+        background: url("../images/kerawang_3a.png");
         background-size: 800px;
         background-position: -225px -70px;
         background-repeat: no-repeat;
