@@ -2,9 +2,9 @@
   box-sizing: border-box;
 }
 
-$first-color: #8f5c55;
+$first-color: #b280a7;
 $second-color: #718964;
-$third-color: #652f30;
+$third-color: #844183;
 $fourth-color: #b98c94;
 $fifth-color: #c8b6b0;
 $sixth-color: #dfd3c8;
@@ -26,6 +26,10 @@ h4,
 h5,
 p {
   margin: 0;
+}
+
+i:not(.fa) {
+  color: $third-color;
 }
 
 .ovh {
@@ -75,13 +79,24 @@ p {
     margin: 0 auto;
     position: relative;
     &.front {
-      background: url("../images/kerawang_4a.png");
-      background-size: 630px;
-      background-position: -70px -130px;
-      background-repeat: no-repeat;
-      background-color: white;
       position: relative;
       margin-bottom: 25px;
+      &:before {
+        background: url("../images/kerawang_4a.png");
+        background-size: 630px;
+        background-position: -70px -130px;
+        background-repeat: no-repeat;
+        background-color: white;
+        content: "";
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 1005;
+        height: 100%;
+        width: 100%;
+        opacity: 0.6;
+      }
       &:after {
         position: absolute;
         top: 0;
@@ -90,11 +105,11 @@ p {
         width: 100%;
         content: "";
         opacity: 1;
-        background: url("../images/bunga3.png");
+        background: url("../images/kerawang_6a.png");
         background-repeat: no-repeat;
         background-size: 500px;
         background-position: 50px -60px;
-        opacity: 0;
+        opacity: 0.6;
       }
     }
     &.back {
@@ -157,6 +172,7 @@ p {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    position: relative;
   }
   &-title {
     text-align: right;
