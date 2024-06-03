@@ -16,6 +16,10 @@ h1, h2, h3, h4, h5, p {
   margin: 0;
 }
 
+i:not(.fa) {
+  color: #844183;
+}
+
 .ovh {
   overflow: hidden;
 }
@@ -47,7 +51,7 @@ h1, h2, h3, h4, h5, p {
 
 .invite-lang a {
   color: #fff;
-  background: #652f30;
+  background: #844183;
   border-radius: 10px;
   padding: 7px 20px;
   font-size: 12px;
@@ -70,9 +74,21 @@ h1, h2, h3, h4, h5, p {
 }
 
 .invite-card.front {
-  background: #fff url("../bunga-new.1c12fb47.png") -70px -130px / 630px no-repeat;
   margin-bottom: 25px;
   position: relative;
+}
+
+.invite-card.front:before {
+  content: "";
+  height: 1005px;
+  height: 100%;
+  width: 100%;
+  opacity: .6;
+  background: #fff url("kerawang_4a.82d6b11d.png") -70px -130px / 630px no-repeat;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .invite-card.front:after {
@@ -80,7 +96,8 @@ h1, h2, h3, h4, h5, p {
   width: 100%;
   content: "";
   opacity: 1;
-  background: url("../bunga3.3a7d38f2.png") 50px -60px / 500px no-repeat;
+  opacity: .6;
+  background: url("kerawang_6a.a3e6d791.png") 50px -60px / 500px no-repeat;
   position: absolute;
   top: 0;
   left: 0;
@@ -104,7 +121,7 @@ h1, h2, h3, h4, h5, p {
   width: 100%;
   content: "";
   opacity: .5;
-  background: url("../bunga-2-new.104296e5.png") -225px -70px / 800px no-repeat;
+  background: url("kerawang_3a.1102c182.png") -225px -70px / 800px no-repeat;
   position: absolute;
   top: 0;
   left: 0;
@@ -153,6 +170,7 @@ h1, h2, h3, h4, h5, p {
   justify-content: flex-end;
   align-items: flex-end;
   display: flex;
+  position: relative;
 }
 
 .invite-title {
@@ -193,7 +211,7 @@ h1, h2, h3, h4, h5, p {
 
 .invite-links-wrapper {
   height: 51px;
-  background: #652f30;
+  background: #844183;
   margin-top: 50px;
   position: relative;
 }
@@ -202,7 +220,7 @@ h1, h2, h3, h4, h5, p {
   width: 100%;
   text-align: center;
   color: #fff;
-  background: #652f30;
+  background: #844183;
   justify-content: center;
   align-items: center;
   font-size: 14px;
@@ -211,7 +229,7 @@ h1, h2, h3, h4, h5, p {
 }
 
 .invite-links > a:hover, .invite-links > a.active {
-  background: #8f5c55;
+  background: #b280a7;
 }
 
 .invite-links.show-this {
@@ -322,7 +340,7 @@ form .form-row.submit .submit-btn {
   color: #fff;
   height: 37px;
   cursor: pointer;
-  background: #652f30;
+  background: #844183;
   border-radius: 5px;
   transition: all .3s;
   display: block;
@@ -388,7 +406,7 @@ form.hide-this, .form-submit-message {
   height: 25px;
   width: 25px;
   color: #fff;
-  background: #652f30;
+  background: #844183;
   border-radius: 30px;
   justify-content: center;
   align-items: center;
@@ -448,7 +466,7 @@ form.hide-this, .form-submit-message {
   width: 40px;
   height: 40px;
   border: 5px solid #f3f3f3;
-  border-top-color: #652f30;
+  border-top-color: #844183;
   border-radius: 50%;
   animation: spin 2s linear infinite;
 }
@@ -485,7 +503,7 @@ form.hide-this, .form-submit-message {
   width: 100%;
   color: #fff;
   text-align: center;
-  background: #652f30;
+  background: #844183;
   border-radius: 5px;
   margin-left: 10px;
   padding: 10px;
@@ -529,7 +547,7 @@ form.hide-this, .form-submit-message {
 
 .contact-numbers a {
   color: #fff;
-  background: #652f30;
+  background: #844183;
   border-radius: 5px;
   padding: 7px 15px;
   font-size: 12px;
@@ -582,7 +600,7 @@ form.hide-this, .form-submit-message {
 
 .dropdown-btn {
   color: #000;
-  border-bottom: 1px solid #8f5c55;
+  border-bottom: 1px solid #b280a7;
   padding: 0 10px;
 }
 
@@ -596,7 +614,7 @@ form.hide-this, .form-submit-message {
   height: 0;
   width: 100%;
   z-index: 10;
-  background: #8f5c55;
+  background: #b280a7;
   flex-direction: column;
   display: flex;
   position: absolute;
@@ -751,4 +769,4 @@ form.hide-this, .form-submit-message {
   }
 }
 
-/*# sourceMappingURL=bahasa.820f576f.css.map */
+/*# sourceMappingURL=guests.820f576f.css.map */
