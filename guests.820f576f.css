@@ -84,7 +84,7 @@ i:not(.fa) {
   height: 100%;
   width: 100%;
   opacity: .6;
-  background: #fff url("kerawang_4a.82d6b11d.png") -70px -130px / 630px no-repeat;
+  background: #fff url("../kerawang_4a.82d6b11d.png") -70px -130px / 630px no-repeat;
   display: block;
   position: absolute;
   top: 0;
@@ -97,7 +97,7 @@ i:not(.fa) {
   content: "";
   opacity: 1;
   opacity: .6;
-  background: url("kerawang_6a.a3e6d791.png") 50px -60px / 500px no-repeat;
+  background: url("../kerawang_6a.a3e6d791.png") 50px -60px / 500px no-repeat;
   position: absolute;
   top: 0;
   left: 0;
@@ -121,7 +121,7 @@ i:not(.fa) {
   width: 100%;
   content: "";
   opacity: .5;
-  background: url("kerawang_3a.1102c182.png") -225px -70px / 800px no-repeat;
+  background: url("../kerawang_3a.1102c182.png") -225px -70px / 800px no-repeat;
   position: absolute;
   top: 0;
   left: 0;
@@ -769,4 +769,4 @@ form.hide-this, .form-submit-message {
   }
 }
 
-/*# sourceMappingURL=guests.820f576f.css.map */
+/*# sourceMappingURL=bahasa.820f576f.css.map */
