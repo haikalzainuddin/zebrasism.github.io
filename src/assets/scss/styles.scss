@@ -179,8 +179,8 @@ i:not(.fa) {
     h1 {
       margin: 20px 0;
       font-size: 70px;
-      font-weight: 600;
-      font-family: "Dancing Script", cursive;
+      font-weight: 500;
+      font-family: "Great Vibes", cursive;
       span {
         display: block;
       }
@@ -189,6 +189,7 @@ i:not(.fa) {
       margin: 0;
       font-size: 17px;
       font-weight: 500;
+      text-transform: uppercase;
     }
   }
   &-links {
@@ -348,6 +349,18 @@ form {
   }
   &.hide-this {
     display: none;
+  }
+  .radio-wrap {
+    display: flex;
+    align-items: center;
+    input {
+      width: initial;
+      margin: 0;
+      margin-right: 10px;
+    }
+    label {
+      margin: 0;
+    }
   }
 }
 
