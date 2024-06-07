@@ -28,7 +28,7 @@ p {
   margin: 0;
 }
 
-i:not(.fa) {
+i:not(.fa):not(.fa-brands):not(.fab) {
   color: $third-color;
 }
 

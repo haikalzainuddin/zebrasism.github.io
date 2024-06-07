@@ -108,13 +108,11 @@ $(function () {
     takhadir.click(function () {
       takhadir[0].checked = true;
       hadir_[0].checked = false;
-      $(".guest")[0].required = false;
       amount.addClass("hide-this");
     });
     hadir_.click(function () {
       takhadir[0].checked = false;
       hadir_[0].checked = true;
-      $(".guest")[0].required = true;
       amount.removeClass("hide-this");
     });
   }
