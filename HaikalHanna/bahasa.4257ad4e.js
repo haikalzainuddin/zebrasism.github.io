@@ -566,6 +566,7 @@ $(function() {
         showPartners();
         popupLinks();
         pageLoad();
+        hadirTidakHadir();
         // console.log(process.env.S3_BUCKET)
         if ($(".invite-links").length) stickyNav();
         if ($(".guests_page").length) {
@@ -602,6 +603,23 @@ $(function() {
             else $(".invite-links").addClass("sticky");
             if (_this.scrollTop() > 50) $(".invite-links").addClass("show-this");
             else $(".invite-links").removeClass("show-this");
+        });
+    }
+    function hadirTidakHadir() {
+        let hadir_ = $(".hadir");
+        let takhadir = $(".tidakhadir");
+        let amount = $(".form-row.controlled");
+        takhadir.click(function() {
+            takhadir[0].checked = true;
+            hadir_[0].checked = false;
+            $(".guest")[0].required = false;
+            amount.addClass("hide-this");
+        });
+        hadir_.click(function() {
+            takhadir[0].checked = false;
+            hadir_[0].checked = true;
+            $(".guest")[0].required = true;
+            amount.removeClass("hide-this");
         });
     }
     function showPartners() {
@@ -649,14 +667,18 @@ $(function() {
         }
     }
     async function submitForm() {
-        let status = $(".status").val();
         let form = $("#rsvpForm");
         let loader = $(".loader-overlay");
         let submitMessage = $(".form-submit-message");
+        let hadir_ = $(".hadir");
+        let takhadir = $(".tidakhadir");
+        let status_ = "";
+        if (hadir_[0].checked) status_ = "attending";
+        else if (takhadir[0].checked) status_ = "not attending";
         const guestData = {
             name: $(".name").val(),
             phone: $(".phone").val(),
-            status: $(".status").val(),
+            status: status_,
             pax: $(".pax").val(),
             children: $(".children").val(),
             guest_of: $(".guest").val(),

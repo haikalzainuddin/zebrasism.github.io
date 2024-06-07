@@ -179,9 +179,9 @@ i:not(.fa) {
 
 .invite-title h1 {
   margin: 20px 0;
-  font-family: Dancing Script, cursive;
+  font-family: Great Vibes, cursive;
   font-size: 70px;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .invite-title h1 span {
@@ -189,6 +189,7 @@ i:not(.fa) {
 }
 
 .invite-title h3 {
+  text-transform: uppercase;
   margin: 0;
   font-size: 17px;
   font-weight: 500;
@@ -368,7 +369,25 @@ form.fade-this {
   opacity: .2;
 }
 
-form.hide-this, .form-submit-message {
+form.hide-this {
+  display: none;
+}
+
+form .radio-wrap {
+  align-items: center;
+  display: flex;
+}
+
+form .radio-wrap input {
+  width: initial;
+  margin: 0 10px 0 0;
+}
+
+form .radio-wrap label {
+  margin: 0;
+}
+
+.form-submit-message {
   display: none;
 }
 
